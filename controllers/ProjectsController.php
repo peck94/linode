@@ -48,8 +48,8 @@ class ProjectsController extends Controller
     
     public function actionSpasties()
     {
-        $new_form = new app\models\NewSpastieForm;
-        $old_form = new app\models\OldSpastieForm;
+        $new_form = new \app\models\NewSpastieForm;
+        $old_form = new \app\models\OldSpastieForm;
         return $this->render('spasties/index', [
             'new_form' => $new_form,
             'old_form' => $old_form,
