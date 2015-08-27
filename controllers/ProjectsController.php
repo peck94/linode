@@ -6,6 +6,8 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use app\models\NewSpastieForm;
+use app\models\OldSpastieForm;
 
 class ProjectsController extends Controller
 {
@@ -48,8 +50,8 @@ class ProjectsController extends Controller
     
     public function actionSpasties()
     {
-        $new_form = new \app\models\NewSpastieForm;
-        $old_form = new \app\models\OldSpastieForm;
+        $new_form = new NewSpastieForm;
+        $old_form = new OldSpastieForm;
         return $this->render('spasties/index', [
             'new_form' => $new_form,
             'old_form' => $old_form,
