@@ -13,6 +13,8 @@ use yii\helpers\Html;
         <p class="lead">
             Secret pasties.
             Basically a Pastebin clone but with encryption!
+        </p>
+        <p>
             The system works as follows:
             <ol>
                 <li>You enter a passphrase and a secret message</li>
@@ -30,19 +32,32 @@ use yii\helpers\Html;
             even someone with access to the filesystem (for example, me) should not be able to retrieve it.
             Furthermore, Twofish has withstood cryptanalysis for quite a while, so the contents of the message
             should be equally safe against any probabilistic polynomial-time adversary.
-    </p>
+        </p>
     </div>
 
     <div class="body-content">
+        <h2>Create a new spastie</h2>
+        <?php $form = ActiveForm::begin(['id' => 'new-spastie-form']); ?>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Create a new spastie</h2>
-            </div>
-            <div class="col-lg-4">
-                <h2>Access an existing spastie</h2>
-            </div>
+        <?= $form->field($model, 'password') ?>
+
+        <?= $form->field($model, 'message') ?>
+
+        <div class="form-group">
+            <?= Html::submitButton('Save', ['class' => 'btn btn-primary', 'name' => 'new-spastie-button']) ?>
         </div>
 
+        <?php ActiveForm::end(); ?>
+        
+        <h2>Access an existing spastie</h2>
+        <?php $form = ActiveForm::begin(['id' => 'old-spastie-form']); ?>
+
+        <?= $form->field($model, 'password') ?>
+
+        <div class="form-group">
+            <?= Html::submitButton('Download', ['class' => 'btn btn-primary', 'name' => 'old-spastie-button']) ?>
+        </div>
+
+        <?php ActiveForm::end(); ?>
     </div>
 </div>
