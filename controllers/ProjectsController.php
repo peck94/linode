@@ -55,7 +55,7 @@ class ProjectsController extends Controller
         
         $algo = 'twofish';
         $mode = 'cbc';
-        $iv = 'spastiespastiespastie';
+        $iv = 'spastiespastiesp';
         $hash = 'sha256';
         
         if ($new_form->load(Yii::$app->request->post())) {
