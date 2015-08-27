@@ -59,18 +59,22 @@ class ProjectsController extends Controller
         $iv = 'spastiespastiesp';
         $hash = 'sha256';
         
-        if ($new_form->load(Yii::$app->request->post())) {
+        $contents = '';
+        
+        if($new_form->load(Yii::$app->request->post())) {
+            $password = $new_form->password;
+            $message = $new_form->message;
+            $key = hash($hash, $password, false);
+            
             $td = mcrypt_module_open($algo, '', $mode, '');
-            mcrypt_generic_init($td, $new_form->password, $iv);
-            $encmsg = mcrypt_generic($td, $new_form->message);
+            mcrypt_generic_init($td, $password, $iv);
+            $encmsg = mcrypt_generic($td, $message);
             mcrypt_generic_deinit($td);
             mcrypt_module_close($td);
 
-            $key = hash($hash, $new_form->password, false);
-
             $spastie = new Spastie;
             $spastie->key = $key;
-            $spastie->message = $encmsg;
+            $spastie->message = base64_encode($encmsg);
             if($spastie->save()) {
                 Yii::$app->session->setFlash('pastieCreated');
             }else{
@@ -78,11 +82,27 @@ class ProjectsController extends Controller
             }
 
             return $this->refresh();
+        }else if($old_form->load(Yii::$app->request->post())) {
+            $password = $new_form->password;
+            $key = hash($hash, $password, false);
+            
+            if($spastie = Spastie::find()->where(['key' => $key])->one()) {
+                $td = mcrypt_module_open($algo, '', $mode, '');
+                mcrypt_generic_init($td, $password, $iv);
+
+                $contents = mdecrypt_generic($td, $spastie->message);
+
+                mcrypt_generic_deinit($td);
+                mcrypt_module_close($td);
+            }else{
+                Yii::$app->session->setFlash('pastieWrong');
+            }
         }
 
         return $this->render('spasties/index', [
             'new_form' => $new_form,
             'old_form' => $old_form,
+            'contents' => $contents,
         ]);
     }
 }

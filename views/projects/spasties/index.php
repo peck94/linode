@@ -65,6 +65,12 @@ use yii\bootstrap\ActiveForm;
         <?php ActiveForm::end(); ?>
         
         <h2>Access an existing spastie</h2>
+        <?php if (Yii::$app->session->hasFlash('pastieWrong')): ?>
+
+        <div class="alert alert-danger">
+            That spastie does not seem to exist.
+        </div>
+        <?php endif; ?>
         <?php $form = ActiveForm::begin(['id' => 'old-spastie-form']); ?>
 
         <?= $form->field($old_form, 'password') ?>
