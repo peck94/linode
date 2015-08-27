@@ -4,7 +4,6 @@
 /* @var $content string */
 
 use yii\helpers\Html;
-use yii\helpers\BaseHtml;
 use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;

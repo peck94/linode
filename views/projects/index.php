@@ -3,6 +3,7 @@
 /* @var $this yii\web\View */
 
 $this->title = 'Pecky\'s projects';
+use yii\helpers\Html;
 ?>
 <div class="site-index">
 
