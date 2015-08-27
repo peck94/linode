@@ -23,7 +23,7 @@ $this->title = 'Pecky\'s projects';
                     Share encrypted pasties with anyone online.
                 </p>
 
-                <p><a class="btn btn-default" href="/projects/spasties">Spasties &raquo;</a></p>
+                <p><?= Html::a('Spasties &raquo;', ['/projects/spasties'], ['class'=>'btn btn-default']) ?></p>
             </div>
             <div class="col-lg-4">
                 <h2>Nonsense</h2>
@@ -32,7 +32,7 @@ $this->title = 'Pecky\'s projects';
                     Generate intelligent-sounding nonsensical English texts.
                 </p>
 
-                <p><a class="btn btn-default" href="/projects/nonsense">Nonsense &raquo;</a></p>
+                <p><?= Html::a('Nonsense &raquo;', ['/projects/nonsense'], ['class'=>'btn btn-default']) ?></p>
             </div>
         </div>
 

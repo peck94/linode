@@ -11,7 +11,7 @@ $this->title = 'Pecky\'s homepage';
 
         <p class="lead">A place of science and wonder.</p>
 
-        <p><a class="btn btn-lg btn-success" href="/projects">View all projects</a></p>
+        <p><?= Html::a('View all projects', ['/projects'], ['class'=>'btn-large btn-primary']) ?></p>
     </div>
 
     <div class="body-content">
@@ -25,7 +25,7 @@ $this->title = 'Pecky\'s homepage';
                     Share encrypted pasties with anyone online.
                 </p>
 
-                <p><a class="btn btn-default" href="/projects/spasties">Spasties &raquo;</a></p>
+                <p><?= Html::a('Spasties &raquo;', ['/projects/spasties'], ['class'=>'btn btn-default']) ?></p>
             </div>
             <div class="col-lg-4">
                 <h2>Nonsense</h2>
@@ -34,7 +34,7 @@ $this->title = 'Pecky\'s homepage';
                     Generate intelligent-sounding nonsensical English texts.
                 </p>
 
-                <p><a class="btn btn-default" href="/projects/nonsense">Nonsense &raquo;</a></p>
+                <p><?= Html::a('Nonsense &raquo;', ['/projects/nonsense'], ['class'=>'btn btn-default']) ?></p>
             </div>
         </div>
 
