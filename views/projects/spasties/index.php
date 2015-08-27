@@ -38,11 +38,25 @@ use yii\bootstrap\ActiveForm;
 
     <div class="body-content">
         <h2>Create a new spastie</h2>
+        <?php if (Yii::$app->session->hasFlash('pastieCreated')): ?>
+
+        <div class="alert alert-success">
+            Your spastie has been created.
+        </div>
+        <?php endif; ?>
+        
+        <?php if (Yii::$app->session->hasFlash('pastieFail')): ?>
+
+        <div class="alert alert-danger">
+            The spastie failed for some reason!
+        </div>
+        <?php endif; ?>
+        
         <?php $form = ActiveForm::begin(['id' => 'new-spastie-form']); ?>
 
         <?= $form->field($new_form, 'password') ?>
 
-        <?= $form->field($new_form, 'message')->textarea(['rows' => '40', 'cols' => '90']) ?>
+        <?= $form->field($new_form, 'message')->textarea(['rows' => '40', 'cols' => '50']) ?>
 
         <div class="form-group">
             <?= Html::submitButton('Save', ['class' => 'btn btn-primary', 'name' => 'new-spastie-button']) ?>
