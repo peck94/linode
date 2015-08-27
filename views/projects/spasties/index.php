@@ -42,7 +42,7 @@ use yii\bootstrap\ActiveForm;
 
         <?= $form->field($new_form, 'password') ?>
 
-        <?= $form->field($new_form, 'message') ?>
+        <?= $form->field($new_form, 'message')->textarea(['rows' => '40', 'cols' => '90']) ?>
 
         <div class="form-group">
             <?= Html::submitButton('Save', ['class' => 'btn btn-primary', 'name' => 'new-spastie-button']) ?>
