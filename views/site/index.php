@@ -12,7 +12,7 @@ use yii\helpers\Html;
 
         <p class="lead">A place of science and wonder.</p>
 
-        <p><?= Html::a('View all projects', ['/projects'], ['class'=>'btn-large btn-primary']) ?></p>
+        <p><?= Html::a('View all projects', ['/projects'], ['class'=>'btn btn-primary']) ?></p>
     </div>
 
     <div class="body-content">
