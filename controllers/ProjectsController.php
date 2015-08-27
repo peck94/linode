@@ -48,6 +48,11 @@ class ProjectsController extends Controller
     
     public function actionSpasties()
     {
-        return $this->render('spasties/index');
+        $new_form = new NewSpastieForm;
+        $old_form = new OldSpastieForm;
+        return $this->render('spasties/index', [
+            'new_form' => $new_form,
+            'old_form' => $old_form,
+        ]);
     }
 }

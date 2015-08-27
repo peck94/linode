@@ -40,9 +40,9 @@ use yii\bootstrap\ActiveForm;
         <h2>Create a new spastie</h2>
         <?php $form = ActiveForm::begin(['id' => 'new-spastie-form']); ?>
 
-        <?= $form->field($model, 'password') ?>
+        <?= $form->field($new_form, 'password') ?>
 
-        <?= $form->field($model, 'message') ?>
+        <?= $form->field($new_form, 'message') ?>
 
         <div class="form-group">
             <?= Html::submitButton('Save', ['class' => 'btn btn-primary', 'name' => 'new-spastie-button']) ?>
@@ -53,7 +53,7 @@ use yii\bootstrap\ActiveForm;
         <h2>Access an existing spastie</h2>
         <?php $form = ActiveForm::begin(['id' => 'old-spastie-form']); ?>
 
-        <?= $form->field($model, 'password') ?>
+        <?= $form->field($old_form, 'password') ?>
 
         <div class="form-group">
             <?= Html::submitButton('Download', ['class' => 'btn btn-primary', 'name' => 'old-spastie-button']) ?>
