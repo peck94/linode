@@ -8,6 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\NewSpastieForm;
 use app\models\OldSpastieForm;
+use app\models\Spastie;
 
 class ProjectsController extends Controller
 {
