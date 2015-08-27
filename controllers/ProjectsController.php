@@ -45,4 +45,9 @@ class ProjectsController extends Controller
     {
         return $this->render('index');
     }
+    
+    public function actionSpasties()
+    {
+        return $this->render('spasties/index');
+    }
 }
