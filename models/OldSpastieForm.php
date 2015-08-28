@@ -13,6 +13,15 @@ class OldSpastieForm extends Model
 {
     public $password;
 
+    /**
+     * @return array customized attribute labels
+     */
+    public function attributeLabels()
+    {
+        return [
+            'password' => 'Passphrase',
+        ];
+    }
 
     /**
      * @return array the validation rules.

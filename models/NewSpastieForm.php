@@ -14,6 +14,16 @@ class NewSpastieForm extends Model
     public $password;
     public $message;
 
+    /**
+     * @return array customized attribute labels
+     */
+    public function attributeLabels()
+    {
+        return [
+            'password' => 'Passphrase',
+            'message' => 'Spastie message',
+        ];
+    }
 
     /**
      * @return array the validation rules.
