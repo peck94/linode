@@ -6,7 +6,7 @@ use yii\helpers\Html;
 
 $this->title = 'About';
 $this->params['breadcrumbs'][] = $this->title;
-$ip = escapeshellcmd($_SERVER['REMOTE_ADDR']);
+$ip = htmlspecialchars($_SERVER['REMOTE_ADDR']);
 ?>
 <div class="site-about">
     <h1>About me</h1>
@@ -22,7 +22,5 @@ $ip = escapeshellcmd($_SERVER['REMOTE_ADDR']);
     </p>
     <p>
         <strong>Your IP:</strong> <?= $ip; ?>
-        <br>
-        <pre><?= passthru('whois ' . $ip); ?></pre>
     </p>
 </div>
