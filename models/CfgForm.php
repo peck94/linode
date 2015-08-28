@@ -8,7 +8,7 @@ use yii\base\Model;
 /**
  * LoginForm is the model behind the login form.
  */
-class NonsenseForm extends Model
+class CfgForm extends Model
 {
     public $rules;
 
