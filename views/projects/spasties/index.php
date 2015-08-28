@@ -83,7 +83,7 @@ use yii\bootstrap\ActiveForm;
         
         <?php if(!empty($contents) && $contents[0]): ?>
         <fieldset><legend>Spastie contents</legend>
-            <pre><?= $contents[1] ?></pre>
+            <pre><?= htmlspecialchars($contents[1], ENT_QUOTES, 'UTF-8'); ?></pre>
         </fieldset>
         <? endif; ?>
     </div>
