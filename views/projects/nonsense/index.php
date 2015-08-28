@@ -18,14 +18,6 @@ use yii\bootstrap\ActiveForm;
 
     <div class="body-content">
         <h2>Generate nonsense</h2>
-        <?php $form = ActiveForm::begin(['id' => 'nonsense-form']); ?>
-
-        <?= $form->field($model, 'start') ?>
-
-        <div class="form-group">
-            <?= Html::submitButton('Generate', ['class' => 'btn btn-primary', 'name' => 'generate-button']) ?>
-        </div>
-
-        <?php ActiveForm::end(); ?>
+        
     </div>
 </div>
