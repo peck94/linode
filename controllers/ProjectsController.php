@@ -76,4 +76,9 @@ class ProjectsController extends Controller
             'contents' => $contents,
         ]);
     }
+    
+    public function actionNonsense()
+    {
+        $this->render('nonsense/index');
+    }
 }
