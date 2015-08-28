@@ -8,7 +8,6 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\NewSpastieForm;
 use app\models\OldSpastieForm;
-use app\models\Spastie;
 
 class ProjectsController extends Controller
 {
@@ -54,28 +53,10 @@ class ProjectsController extends Controller
         $new_form = new NewSpastieForm;
         $old_form = new OldSpastieForm;
         
-        $algo = 'twofish';
-        $mode = 'cbc';
-        $iv = 'spastiespastiesp';
-        $hash = 'sha256';
-        
         $contents = '';
         
         if($new_form->load(Yii::$app->request->post())) {
-            $password = $new_form->password;
-            $message = $new_form->message;
-            $key = hash($hash, $password, false);
-            
-            $td = mcrypt_module_open($algo, '', $mode, '');
-            mcrypt_generic_init($td, $password, $iv);
-            $encmsg = mcrypt_generic($td, $message);
-            mcrypt_generic_deinit($td);
-            mcrypt_module_close($td);
-
-            $spastie = new Spastie;
-            $spastie->key = $key;
-            $spastie->message = base64_encode($encmsg);
-            if($spastie->save()) {
+            if($new_form->create()) {
                 Yii::$app->session->setFlash('pastieCreated');
             }else{
                 Yii::$app->session->setFlash('pastieFail');
@@ -83,19 +64,12 @@ class ProjectsController extends Controller
 
             return $this->refresh();
         }else if($old_form->load(Yii::$app->request->post())) {
-            $password = $old_form->password;
-            $key = hash($hash, $password, false);
-            
-            if($spastie = Spastie::find()->where(['key' => $key])->one()) {
-                $td = mcrypt_module_open($algo, '', $mode, '');
-                mcrypt_generic_init($td, $password, $iv);
-
-                $contents = mdecrypt_generic($td, $spastie->message);
-
-                mcrypt_generic_deinit($td);
-                mcrypt_module_close($td);
-            }else{
+            $contents = $old_form->fetch();
+            if($contents === false)
+            {
                 Yii::$app->session->setFlash('pastieWrong');
+            }else{
+                $contents = '';
             }
         }
 
