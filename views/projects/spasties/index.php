@@ -15,9 +15,9 @@ use yii\bootstrap\ActiveForm;
             Secret pasties.
             Basically a Pastebin clone but with encryption!
         </p>
-        <p>
+        <p style="text-align: left">
             The system works as follows:
-            <ol style="text-align: left">
+            <ol>
                 <li>You enter a passphrase and a secret message</li>
                 <li>Your message is encrypted with the passphrase you entered</li>
                 <li>Your passphrase is hashed</li>
