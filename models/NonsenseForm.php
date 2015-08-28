@@ -11,6 +11,7 @@ use yii\base\Model;
 class NonsenseForm extends Model
 {
     public $start;
+    public $seed;
 
     /**
      * @return array customized attribute labels
@@ -35,7 +36,10 @@ class NonsenseForm extends Model
     public function generate()
     {
         $url = 'http://linode.pecky.be/cgi-bin/nonsens.py';
-        $data = array('start' => $this->start);
+        $data = array(
+            'start' => $this->start,
+            'seed' => $this->seed,
+        );
 
         $options = array(
             'http' => array(

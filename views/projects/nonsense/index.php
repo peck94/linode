@@ -5,6 +5,10 @@
 $this->title = 'Pecky\'s projects';
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
+
+$seeds = [
+    'hagar' => 'Hagar',
+];
 ?>
 <div class="site-index">
 
@@ -21,6 +25,7 @@ use yii\bootstrap\ActiveForm;
 
         <?php $form = ActiveForm::begin(['id' => 'nonsense-form']); ?>
 
+        <?= $form->field($model, 'seed')->dropDownList($seeds); ?>
         <?= $form->field($model, 'start') ?>
 
         <div class="form-group">
