@@ -2,7 +2,9 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Pecky\'s projects';
+$this->title = 'Spasties';
+$this->params['breadcrumbs'][] = $this->title;
+
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 ?>

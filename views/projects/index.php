@@ -2,7 +2,9 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'Pecky\'s projects';
+$this->title = 'Projects';
+$this->params['breadcrumbs'][] = $this->title;
+
 use yii\helpers\Html;
 ?>
 <div class="site-index">
