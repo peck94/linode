@@ -35,6 +35,13 @@ use yii\helpers\Html;
 
                 <p><?= Html::a('Nonsense &raquo;', ['/projects/nonsense'], ['class'=>'btn btn-default']) ?></p>
             </div>
+            <div class="col-lg-4">
+                <h2>PyCFG</h2>
+                <p>
+                    Play with context-free grammars.
+                </p>
+                <p><?= Html::a('PyCFG &raquo;', ['/projects/pycfg'], ['class' => 'btn btn-default']) ?></p>
+            </div>
         </div>
 
     </div>

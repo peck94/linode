@@ -93,4 +93,9 @@ class ProjectsController extends Controller
             'result' => $result,
         ]);
     }
+    
+    public function actionPycfg()
+    {
+        return $this->render('pycfg/index');
+    }
 }
