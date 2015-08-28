@@ -29,5 +29,8 @@ use yii\bootstrap\ActiveForm;
 
         <?php ActiveForm::end(); ?>
 
+        <?php if(!empty($result)): ?>
+        <pre><?= $result; ?></pre>
+        <?php endif; ?>
     </div>
 </div>
