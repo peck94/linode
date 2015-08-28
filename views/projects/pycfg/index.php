@@ -22,7 +22,19 @@ use yii\bootstrap\ActiveForm;
         
         <h2>Define your grammar</h2>
 
-        <?= $form->field($model, 'rules')->textarea(['rows' => 40, 'cols' => 50]); ?>
+        <?= $form->field($model, 'rules')->textarea(['rows' => 10, 'cols' => 20]); ?>
+        <strong>Guidelines:</strong> Every rule is of the form <kbd>A -> B</kbd>,
+        where <kbd>A</kbd> can be any alphanumeric name for the rule and <kbd>B</kbd>
+        is a combination of plaintext characters and rule names. Within the right-hand
+        side of a rule, you may refer to other rules by enclosing them in <kbd>$(...)</kbd>.
+        For example, to refer to a rule named <kbd>rule101</kbd> you write <kbd>$(rule101)</kbd>.
+        The grammar for a<sup>n</sup>b<sup>n</sup> can be written as follows:
+        <pre>
+S -> aSb
+S -> ab
+S -> .
+        </pre>
+        The <kbd>.</kbd> character represents the empty string.
 
         <?php ActiveForm::end(); ?>
     </div>
