@@ -65,11 +65,9 @@ class ProjectsController extends Controller
             return $this->refresh();
         }else if($old_form->load(Yii::$app->request->post())) {
             $contents = $old_form->fetch();
-            if($contents === false)
+            if(!$contents[0])
             {
                 Yii::$app->session->setFlash('pastieWrong');
-            }else{
-                $contents = '';
             }
         }
 

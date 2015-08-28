@@ -81,8 +81,10 @@ use yii\bootstrap\ActiveForm;
 
         <?php ActiveForm::end(); ?>
         
-        <?php if(!empty($contents)): ?>
-        <pre><?= $contents ?></pre>
+        <?php if(!empty($contents) && $contents[0]): ?>
+        <fieldset><legend>Spastie contents</legend>
+            <pre><?= $contents[1] ?></pre>
+        </fieldset>
         <? endif; ?>
     </div>
 </div>

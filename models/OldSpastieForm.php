@@ -54,9 +54,9 @@ class OldSpastieForm extends Model
             mcrypt_generic_deinit($td);
             mcrypt_module_close($td);
             
-            return $contents;
+            return [true, $contents];
         } else {
-            return false;
+            return [false, ''];
         }
     }
 
