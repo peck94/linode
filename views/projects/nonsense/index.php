@@ -7,7 +7,9 @@ use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
 $seeds = [
-    'hagar' => 'Hagar',
+    'hagar' => 'Hagar (Mary Johnston)',
+    'dracula' => 'Dracula (Bram Stoker)',
+    'hackers' => 'Hackers (1995 movie)'
 ];
 ?>
 <div class="site-index">
