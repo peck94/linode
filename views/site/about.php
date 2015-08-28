@@ -15,6 +15,4 @@ $this->params['breadcrumbs'][] = $this->title;
         However, that's boring, so I haven't gotten around to this yet.
         Stalkers, stay tuned!
     </p>
-
-    <code><?= __FILE__ ?></code>
 </div>
