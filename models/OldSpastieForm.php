@@ -49,7 +49,7 @@ class OldSpastieForm extends Model
             $td = mcrypt_module_open($algo, '', $mode, '');
             mcrypt_generic_init($td, $password, $iv);
 
-            $contents = mdecrypt_generic($td, $spastie->message);
+            $contents = mdecrypt_generic($td, base64_decode($spastie->msg));
 
             mcrypt_generic_deinit($td);
             mcrypt_module_close($td);
