@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use app\models\NewSpastieForm;
 use app\models\OldSpastieForm;
 use app\models\NonsenseForm;
+use app\models\CfgForm;
 
 class ProjectsController extends Controller
 {
