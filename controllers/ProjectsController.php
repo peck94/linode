@@ -56,6 +56,7 @@ class ProjectsController extends Controller
         $contents = '';
         
         if($new_form->load(Yii::$app->request->post())) {
+            die($new_form->message);
             if($new_form->create()) {
                 Yii::$app->session->setFlash('pastieCreated');
             }else{
