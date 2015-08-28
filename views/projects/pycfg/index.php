@@ -29,11 +29,9 @@ use yii\bootstrap\ActiveForm;
         side of a rule, you may refer to other rules by enclosing them in <kbd>$(...)</kbd>.
         For example, to refer to a rule named <kbd>rule101</kbd> you write <kbd>$(rule101)</kbd>.
         The grammar for a<sup>n</sup>b<sup>n</sup> can be written as follows:
-        <pre>
-S -> a$(S)b
+        <pre>S -> a$(S)b
 S -> ab
-S -> .
-        </pre>
+S -> .</pre>
         The <kbd>.</kbd> character represents the empty string.
 
         <?php ActiveForm::end(); ?>
