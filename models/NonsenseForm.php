@@ -20,6 +20,7 @@ class NonsenseForm extends Model
     {
         return [
             'start' => 'Starting word',
+            'seed' => 'Seed file',
         ];
     }
 
@@ -29,7 +30,7 @@ class NonsenseForm extends Model
     public function rules()
     {
         return [
-            [['start'], 'required'],
+            [['start', 'seed'], 'required'],
         ];
     }
     
