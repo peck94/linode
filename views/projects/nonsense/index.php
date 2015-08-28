@@ -12,7 +12,8 @@ $seeds = [
     'hagar' => 'Hagar (Mary Johnston)',
     'dracula' => 'Dracula (Bram Stoker)',
     'hackers' => 'Hackers (1995 movie)',
-    'cc' => 'Cannibal Corpse lyrics'
+    'cc' => 'Cannibal Corpse lyrics',
+    'mk' => 'Mein Kampf (Adolf Hitler)'
 ];
 ?>
 <div class="site-index">
