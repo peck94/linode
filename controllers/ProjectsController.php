@@ -79,6 +79,16 @@ class ProjectsController extends Controller
     
     public function actionNonsense()
     {
-        die('shitface');
+        $model = new NonsenseForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->generate();
+        }
+        
+        return $this->render('nonsense/index', [
+            'model' => $model,
+            'result' => $result,
+        ]);
     }
 }
