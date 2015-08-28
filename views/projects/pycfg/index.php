@@ -30,7 +30,7 @@ use yii\bootstrap\ActiveForm;
         For example, to refer to a rule named <kbd>rule101</kbd> you write <kbd>$(rule101)</kbd>.
         The grammar for a<sup>n</sup>b<sup>n</sup> can be written as follows:
         <pre>
-S -> aSb
+S -> a$(S)b
 S -> ab
 S -> .
         </pre>
