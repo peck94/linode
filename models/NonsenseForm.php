@@ -31,5 +31,12 @@ class NonsenseForm extends Model
             [['start'], 'required'],
         ];
     }
+    
+    public function generate()
+    {
+        return http_post_fields('http://linode.pecky.be/cgi-bin/nonsens.py', [
+            'start' => $this->start,
+        ]);
+    }
 
 }
