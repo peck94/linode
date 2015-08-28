@@ -4,6 +4,7 @@
 
 $this->title = 'Pecky\'s projects';
 use yii\helpers\Html;
+use yii\bootstrap\ActiveForm;
 ?>
 <div class="site-index">
 
