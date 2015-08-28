@@ -79,6 +79,6 @@ class ProjectsController extends Controller
     
     public function actionNonsense()
     {
-        $this->render('nonsense/index');
+        die('shitface');
     }
 }
