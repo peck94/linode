@@ -96,6 +96,10 @@ class ProjectsController extends Controller
     
     public function actionPycfg()
     {
-        return $this->render('pycfg/index');
+        $model = new CfgForm;
+        
+        return $this->render('pycfg/index', [
+            'model' => $model,
+        ]);
     }
 }
