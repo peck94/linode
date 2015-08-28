@@ -6,8 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
-use app\models\NewSpastieForm;
-use app\models\OldSpastieForm;
+use app\models\NonsenseForm;
 
 class ProjectsController extends Controller
 {
@@ -75,6 +74,21 @@ class ProjectsController extends Controller
             'new_form' => $new_form,
             'old_form' => $old_form,
             'contents' => $contents,
+        ]);
+    }
+    
+    public function actionNonsense()
+    {
+        $model = new NonsenseForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->generate();
+        }
+        
+        $this->render('nonsense/index', [
+            'model' => $model,
+            'result' => $result,
         ]);
     }
 }
