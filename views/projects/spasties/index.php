@@ -76,9 +76,13 @@ use yii\bootstrap\ActiveForm;
         <?= $form->field($old_form, 'password') ?>
 
         <div class="form-group">
-            <?= Html::submitButton('Download', ['class' => 'btn btn-primary', 'name' => 'old-spastie-button']) ?>
+            <?= Html::submitButton('Access', ['class' => 'btn btn-primary', 'name' => 'old-spastie-button']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>
+        
+        <?php if(!empty($contents)): ?>
+        <pre><?= $contents ?></pre>
+        <? endif; ?>
     </div>
 </div>

@@ -10,6 +10,7 @@ class Spastie extends ActiveRecord
     
     public $key; // hash of the passphrase
     public $message; // message encrypted with the passphrase
+    public $id; // id of the message
     
     /**
      * @return string the name of the table associated with this ActiveRecord class.

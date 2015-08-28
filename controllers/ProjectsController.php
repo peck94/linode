@@ -83,7 +83,7 @@ class ProjectsController extends Controller
 
             return $this->refresh();
         }else if($old_form->load(Yii::$app->request->post())) {
-            $password = $new_form->password;
+            $password = $old_form->password;
             $key = hash($hash, $password, false);
             
             if($spastie = Spastie::find()->where(['key' => $key])->one()) {
