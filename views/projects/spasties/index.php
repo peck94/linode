@@ -17,7 +17,7 @@ use yii\bootstrap\ActiveForm;
         </p>
         <p>
             The system works as follows:
-            <ol>
+            <ol style="text-align: left">
                 <li>You enter a passphrase and a secret message</li>
                 <li>Your message is encrypted with the passphrase you entered</li>
                 <li>Your passphrase is hashed</li>
@@ -27,7 +27,7 @@ use yii\bootstrap\ActiveForm;
                 <li>The system hashes the passphrase and checks for a file with that name</li>
                 <li>If such a file exists, it is decrypted with the supplied passphrase and its contents returned</li>
             </ol>
-            The encryption used is Twofish in CBC mode with IV <keyb>spastiespastiespastie</keyb>.
+            The encryption used is Twofish in CBC mode with IV <kbd>spastiespastiesp</kbd>.
             The hash is SHA-256.
             Use of a secure hash function guarantees that no efficient adversary can recover the key, so
             even someone with access to the filesystem (for example, me) should not be able to retrieve it.
