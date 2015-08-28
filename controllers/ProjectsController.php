@@ -76,22 +76,4 @@ class ProjectsController extends Controller
             'contents' => $contents,
         ]);
     }
-    
-    public function actionNonsense()
-    {
-        $model = new NonsenseForm;
-        /*$result = '';
-        if($model->load(Yii::$app->request->post()))
-        {
-            $result = $model->generate();
-        }
-        
-        $this->render('nonsense/index', [
-            'model' => $model,
-            'result' => $result,
-        ]);*/
-        $this->render('nonsense/index', [
-            'model' => $model,
-        ]);
-    }
 }
