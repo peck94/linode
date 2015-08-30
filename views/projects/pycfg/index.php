@@ -41,5 +41,12 @@ S -> .</pre>
         </div>
 
         <?php ActiveForm::end(); ?>
+        
+        <h2>Result</h2>
+        <?php if(!empty($result)): ?>
+        <pre><?= $result; ?></pre>
+        <?php else: ?>
+        <p>Please define a grammar and hit one of the action buttons.</p>
+        <?php endif; ?>
     </div>
 </div>
