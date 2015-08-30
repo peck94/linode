@@ -34,7 +34,8 @@ use yii\bootstrap\ActiveForm;
         <pre>S -> a`S`b
 S -> ab
 S -> .</pre>
-        The <kbd>.</kbd> character represents the empty string.
+        The <kbd>.</kbd> character represents the empty string and
+        <kbd>S</kbd> always marks the start symbol.
         
         <div class="btn-group">
             <?= Html::submitButton('Generate sentence', ['class' => 'btn btn-primary', 'name' => 'pycfg-generate']) ?>
