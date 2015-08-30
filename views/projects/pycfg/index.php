@@ -39,6 +39,7 @@ S -> .</pre>
         
         <div class="btn-group">
             <?= Html::submitButton('Generate sentence', ['class' => 'btn btn-primary', 'name' => 'pycfg-generate']) ?>
+            <?= Html::submitButton('Chomsky normal form', ['class' => 'btn btn-primary', 'name' => 'pycfg-cnf']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>

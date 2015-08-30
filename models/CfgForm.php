@@ -33,14 +33,14 @@ class CfgForm extends Model
     }
     
     /**
-     * Generate sentence in grammar
+     * Execute operation on grammar
      */
-    public function generate()
+    public function execute($cmd)
     {
         $url = 'http://linode.pecky.be/cgi-bin/pycfg/main.py';
         $data = array(
             'rules' => $this->rules,
-            'cmd' => 'generate',
+            'cmd' => $cmd,
         );
 
         $options = array(
