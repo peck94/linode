@@ -54,6 +54,7 @@ S -> .</pre>
             <div class="btn-group">
                 <?= Html::submitButton('Remove unreachable rules', ['class' => 'btn btn-default', 'name' => 'pycfg-unreach']) ?>
                 <?= Html::submitButton('Remove unproductive rules', ['class' => 'btn btn-default', 'name' => 'pycfg-unprod']) ?>
+                <?= Html::submitButton('Remove epsilon rules', ['class' => 'btn btn-default', 'name' => 'pycfg-eps']) ?>
             </div>
         </fieldset>
 

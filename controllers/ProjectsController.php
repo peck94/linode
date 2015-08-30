@@ -121,6 +121,10 @@ class ProjectsController extends Controller
             {
                 $result = $model->execute('unprod');
             }
+            if(isset($_POST['pycfg-eps']))
+            {
+                $result = $model->execute('eps');
+            }
         }
         
         return $this->render('pycfg/index', [
