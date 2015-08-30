@@ -98,9 +98,18 @@ class ProjectsController extends Controller
     public function actionPycfg()
     {
         $model = new CfgForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            if(isset($_POST['pycfg-generate']))
+            {
+                $result = $model->generate();
+            }
+        }
         
         return $this->render('pycfg/index', [
             'model' => $model,
+            'result' => $result,
         ]);
     }
 }
