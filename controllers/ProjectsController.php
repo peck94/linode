@@ -109,6 +109,18 @@ class ProjectsController extends Controller
             {
                 $result = $model->execute('cnf');
             }
+            if(isset($_POST['pycfg-gnf']))
+            {
+                $result = $model->execute('gnf');
+            }
+            if(isset($_POST['pycfg-unreach']))
+            {
+                $result = $model->execute('unreach');
+            }
+            if(isset($_POST['pycfg-unprod']))
+            {
+                $result = $model->execute('unprod');
+            }
         }
         
         return $this->render('pycfg/index', [
