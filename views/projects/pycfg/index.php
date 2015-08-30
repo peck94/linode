@@ -36,10 +36,10 @@ S -> ab
 S -> .</pre>
         The <kbd>.</kbd> character represents the empty string and
         <kbd>S</kbd> always marks the start symbol.
-        
+        <br>
         <div class="btn-group">
             <?= Html::submitButton('Generate sentence', ['class' => 'btn btn-primary', 'name' => 'pycfg-generate']) ?>
-            <?= Html::submitButton('Chomsky normal form', ['class' => 'btn btn-primary', 'name' => 'pycfg-cnf']) ?>
+            <?= Html::submitButton('Chomsky normal form', ['class' => 'btn btn-default', 'name' => 'pycfg-cnf']) ?>
         </div>
 
         <?php ActiveForm::end(); ?>
