@@ -38,17 +38,23 @@ S -> .</pre>
         <kbd>S</kbd> always marks the start symbol.
         <fieldset>
             <legend>Common tasks</legend>
-            <?= Html::submitButton('Generate sentence', ['class' => 'btn btn-primary', 'name' => 'pycfg-generate']) ?>
+            <div class="btn-group">
+                <?= Html::submitButton('Generate sentence', ['class' => 'btn btn-primary', 'name' => 'pycfg-generate']) ?>
+            </div>
         </fieldset>
         <fieldset>
             <legend>Normal forms</legend>
-            <?= Html::submitButton('Chomsky normal form', ['class' => 'btn btn-default', 'name' => 'pycfg-cnf']) ?>
-            <?= Html::submitButton('Greibach normal form', ['class' => 'btn btn-default', 'name' => 'pycfg-gnf']) ?>
+            <div class="btn-group">
+                <?= Html::submitButton('Chomsky normal form', ['class' => 'btn btn-default', 'name' => 'pycfg-cnf']) ?>
+                <?= Html::submitButton('Greibach normal form', ['class' => 'btn btn-default', 'name' => 'pycfg-gnf']) ?>
+            </div>
         </fieldset>
         <fieldset>
             <legend>Clean-up</legend>
-            <?= Html::submitButton('Remove unreachable rules', ['class' => 'btn btn-default', 'name' => 'pycfg-unreach']) ?>
-            <?= Html::submitButton('Remove unproductive rules', ['class' => 'btn btn-default', 'name' => 'pycfg-unprod']) ?>
+            <div class="btn-group">
+                <?= Html::submitButton('Remove unreachable rules', ['class' => 'btn btn-default', 'name' => 'pycfg-unreach']) ?>
+                <?= Html::submitButton('Remove unproductive rules', ['class' => 'btn btn-default', 'name' => 'pycfg-unprod']) ?>
+            </div>
         </fieldset>
 
         <?php ActiveForm::end(); ?>
