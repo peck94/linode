@@ -103,11 +103,11 @@ class ProjectsController extends Controller
         {
             if(isset($_POST['pycfg-generate']))
             {
-                $result = $model->cmd('generate');
+                $result = $model->execute('generate');
             }
             if(isset($_POST['pycfg-cnf']))
             {
-                $result = $model->cmd('cnf');
+                $result = $model->execute('cnf');
             }
         }
         
