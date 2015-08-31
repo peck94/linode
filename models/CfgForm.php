@@ -11,6 +11,7 @@ use yii\base\Model;
 class CfgForm extends Model
 {
     public $rules;
+    public $action;
 
     /**
      * @return array customized attribute labels
@@ -19,6 +20,7 @@ class CfgForm extends Model
     {
         return [
             'rules' => 'Grammar rules',
+            'action' => 'Action',
         ];
     }
 
@@ -28,7 +30,7 @@ class CfgForm extends Model
     public function rules()
     {
         return [
-            [['rules'], 'required'],
+            [['rules', 'action'], 'required'],
         ];
     }
     
@@ -40,7 +42,7 @@ class CfgForm extends Model
         $url = 'http://linode.pecky.be/cgi-bin/pycfg/main.py';
         $data = array(
             'rules' => $this->rules,
-            'cmd' => $cmd,
+            'cmd' => $this->action,
         );
 
         $options = array(

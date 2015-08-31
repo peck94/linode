@@ -36,28 +36,18 @@ S -> ab
 S -> .</pre>
         The <kbd>.</kbd> character represents the empty string and
         <kbd>S</kbd> always marks the start symbol.
-        <fieldset>
-            <legend>Common tasks</legend>
-            <div class="btn-group">
-                <?= Html::submitButton('Generate sentence', ['class' => 'btn btn-primary', 'name' => 'pycfg-generate']) ?>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Normal forms</legend>
-            <div class="btn-group">
-                <?= Html::submitButton('Chomsky normal form', ['class' => 'btn btn-default', 'name' => 'pycfg-cnf']) ?>
-                <?= Html::submitButton('Greibach normal form', ['class' => 'btn btn-default', 'name' => 'pycfg-gnf']) ?>
-            </div>
-        </fieldset>
-        <fieldset>
-            <legend>Clean-up</legend>
-            <div class="btn-group">
-                <?= Html::submitButton('Remove unreachable rules', ['class' => 'btn btn-default', 'name' => 'pycfg-unreach']) ?>
-                <?= Html::submitButton('Remove unproductive rules', ['class' => 'btn btn-default', 'name' => 'pycfg-unprod']) ?>
-                <?= Html::submitButton('Remove epsilon rules', ['class' => 'btn btn-default', 'name' => 'pycfg-eps']) ?>
-            </div>
-        </fieldset>
+        <p>
+            <?= $form->field($model, 'action')->radioList([
+                'generate' => 'Generate sentence',
+                'cnf' => 'Convert to Chomsky normal form',
+                'gnf' => 'Convert to Greibach normal form',
+                'unreach' => 'Remove unreachable rules',
+                'unprod' => 'Remove unproductive rules',
+                'eps' => 'Remove epsilon rules',
+            ]); ?>
+        </p>
 
+        <?= Html::submitButton('Execute operation', ['class' => 'btn btn-primary']) ?>
         <?php ActiveForm::end(); ?>
         
         <h2>Result</h2>

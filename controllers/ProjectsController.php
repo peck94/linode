@@ -101,30 +101,7 @@ class ProjectsController extends Controller
         $result = '';
         if($model->load(Yii::$app->request->post()))
         {
-            if(isset($_POST['pycfg-generate']))
-            {
-                $result = $model->execute('generate');
-            }
-            if(isset($_POST['pycfg-cnf']))
-            {
-                $result = $model->execute('cnf');
-            }
-            if(isset($_POST['pycfg-gnf']))
-            {
-                $result = $model->execute('gnf');
-            }
-            if(isset($_POST['pycfg-unreach']))
-            {
-                $result = $model->execute('unreach');
-            }
-            if(isset($_POST['pycfg-unprod']))
-            {
-                $result = $model->execute('unprod');
-            }
-            if(isset($_POST['pycfg-eps']))
-            {
-                $result = $model->execute('eps');
-            }
+            $result = $model->execute();
         }
         
         return $this->render('pycfg/index', [
