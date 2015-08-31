@@ -37,7 +37,7 @@ class CfgForm extends Model
     /**
      * Execute operation on grammar
      */
-    public function execute($cmd)
+    public function execute()
     {
         $url = 'http://linode.pecky.be/cgi-bin/pycfg/main.py';
         $data = array(
