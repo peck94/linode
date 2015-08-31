@@ -109,4 +109,18 @@ class ProjectsController extends Controller
             'result' => $result,
         ]);
     }
+    
+    public function actionQueens()
+    {
+        $model = new QueenForm;
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->execute();
+        }
+        
+        return $this->render('queens/index', [
+            'model' => $model,
+            'result' => $result,
+        ]);
+    }
 }
