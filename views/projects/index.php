@@ -45,6 +45,15 @@ use yii\helpers\Html;
                 <p><?= Html::a('PyCFG &raquo;', ['/projects/pycfg'], ['class' => 'btn btn-default']) ?></p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Queens</h2>
+                <p>
+                    Solve the generalized <em>n</em>-queens problem.
+                </p>
+                <p><?= Html::a('Queens &raquo;', ['/projects/queens'], ['class' => 'btn btn-default']) ?></p>
+            </div>
+        </div>
 
     </div>
 </div>
