@@ -28,7 +28,7 @@ use yii\bootstrap\ActiveForm;
         <?php ActiveForm::end(); ?>
         
         <h2>Result</h2>
-        <div style="display: block;">
+        <div class="board">
         <?php
             if(!empty($result)) {
                 $n = sqrt(strlen($result));
@@ -36,9 +36,9 @@ use yii\bootstrap\ActiveForm;
                     for($col = 0; $col < $n; $col++) {
                         $cell = $result{$n*$row + $col};
                         if($cell == 0) {
-                            echo '<div style="width: 50px; height: 50px; float: left; border: 1px solid black">0</div>';
+                            echo '<div class="cell">&nbsp;</div>';
                         }else{
-                            echo '<div style="width: 50px; height: 50px; float: left; border: 1px solid black">1</div>';
+                            echo '<div class="cell queen">&nbsp;</div>';
                         }
                     }
                     echo '<div style="clear: both; display: block"></div>';
