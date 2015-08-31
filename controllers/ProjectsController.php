@@ -10,6 +10,7 @@ use app\models\NewSpastieForm;
 use app\models\OldSpastieForm;
 use app\models\NonsenseForm;
 use app\models\CfgForm;
+use app\models\QueenForm;
 
 class ProjectsController extends Controller
 {
