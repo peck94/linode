@@ -31,7 +31,7 @@ use yii\bootstrap\ActiveForm;
         <div class="board">
         <?php
             if(!empty($result)) {
-                $n = sqrt(strlen($result));
+                $n = sqrt(strlen($result)-1);
                 for($row = 0; $row < $n; $row++) {
                     for($col = 0; $col < $n; $col++) {
                         $cell = $result{$n*$row + $col};
