@@ -99,7 +99,3 @@ a.desc:after {
     height: 50px;
     border: 1px solid black;
 }
-
-.queen {
-    background-image: url('/web/images/queen.png');
-}

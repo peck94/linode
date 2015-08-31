@@ -38,7 +38,7 @@ use yii\bootstrap\ActiveForm;
                         if($cell == 0) {
                             echo '<div class="cell">&nbsp;</div>';
                         }else{
-                            echo '<div class="cell queen">&nbsp;</div>';
+                            echo '<img src="/web/images/queen.png" class="cell">';
                         }
                     }
                     echo '<div style="clear: both; display: block"></div>';
