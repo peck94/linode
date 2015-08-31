@@ -11,7 +11,7 @@ use yii\bootstrap\ActiveForm;
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>PyCFG</h1>
+        <h1>Queens</h1>
 
         <p class="lead">
             Solve the generalized <em>n</em>-queens problem.
@@ -27,7 +27,7 @@ use yii\bootstrap\ActiveForm;
         <?= Html::submitButton('Generate solution', ['class' => 'btn btn-primary']) ?>
         <?php ActiveForm::end(); ?>
         
-        <h2>Result</h2>
+        <h2>View the solution</h2>
         <div class="board">
         <?php
             if(!empty($result)) {
