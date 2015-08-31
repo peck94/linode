@@ -36,9 +36,9 @@ use yii\bootstrap\ActiveForm;
                     for($col = 0; $col < $n; $col++) {
                         $cell = $result{$n*$row + $col};
                         if($cell == 0) {
-                            echo '<div style="width: 10px; height: 10px; float: left; border: 1px solid black">0</div>';
+                            echo '<div style="width: 50px; height: 50px; float: left; border: 1px solid black">0</div>';
                         }else{
-                            echo '<div style="width: 10px; height: 10px; float: left; border: 1px solid black">1</div>';
+                            echo '<div style="width: 50px; height: 50px; float: left; border: 1px solid black">1</div>';
                         }
                     }
                     echo '<div style="clear: both; display: block"></div>';
