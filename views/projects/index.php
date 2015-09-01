@@ -53,6 +53,14 @@ use yii\helpers\Html;
                 </p>
                 <p><?= Html::a('Queens &raquo;', ['/projects/queens'], ['class' => 'btn btn-default']) ?></p>
             </div>
+            
+            <div class="col-lg-4">
+                <h2>SAT</h2>
+                <p>
+                    SAT-solving for fun and profit.
+                </p>
+                <p><?= Html::a('SAT &raquo;', ['/projects/sat'], ['class' => 'btn btn-default']) ?></p>
+            </div>
         </div>
 
     </div>

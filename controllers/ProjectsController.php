@@ -11,6 +11,7 @@ use app\models\OldSpastieForm;
 use app\models\NonsenseForm;
 use app\models\CfgForm;
 use app\models\QueenForm;
+use app\models\SatForm;
 
 class ProjectsController extends Controller
 {
@@ -120,6 +121,21 @@ class ProjectsController extends Controller
         }
         
         return $this->render('queens/index', [
+            'model' => $model,
+            'result' => $result,
+        ]);
+    }
+    
+    public function actionSat()
+    {
+        $model = new SatForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->execute();
+        }
+        
+        return $this->render('sat/index',[
             'model' => $model,
             'result' => $result,
         ]);
