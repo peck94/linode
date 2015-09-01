@@ -28,6 +28,7 @@ use yii\bootstrap\ActiveForm;
         <p>
             <?= $form->field($model, 'action')->radioList([
                 'truth' => 'Truth table',
+                'prove' => 'Prove it',
                 'cnf' => 'Convert to conjunctive normal form',
                 'nnf' => 'Convert to negation normal form',
                 'dnf' => 'Convert to disjunctive normal form',
