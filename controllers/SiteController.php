@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use models\Visitor;
 
 class SiteController extends Controller
 {
@@ -43,6 +44,21 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $ts = date('d M Y, H:i:s');
+        
+        $visitor = Visitor::find()->where(['ip' => $ip])->one();
+        if(!$visitor)
+        {
+            $visitor = new Visitor;
+            $visitor->ip = $ip;
+            $visitor->first_visit = $ts;
+            $visitor->count = 0;
+        }
+        $visitor->last_visit = ts;
+        $visitor->count++;
+        $visitor->save();
+        
         return $this->render('index');
     }
 
