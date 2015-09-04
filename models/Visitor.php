@@ -8,7 +8,6 @@ use yii\db\ActiveRecord;
  * @property string $first_visit
  * @property string $last_visit
  * @property string $num_visits
- * @property string $count
  */
 class Visitor extends ActiveRecord
 {
