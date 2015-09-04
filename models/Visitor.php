@@ -9,7 +9,7 @@ use yii\db\ActiveRecord;
  * @property string $last_visit
  * @property string $num_visits
  */
-class Spastie extends ActiveRecord
+class Visitor extends ActiveRecord
 {
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
