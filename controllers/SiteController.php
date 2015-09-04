@@ -55,7 +55,7 @@ class SiteController extends Controller
             $visitor->first_visit = $ts;
             $visitor->num_visits = 0;
         }
-        $visitor->last_visit = ts;
+        $visitor->last_visit = $ts;
         $visitor->num_visits++;
         $visitor->save();
         
