@@ -53,10 +53,10 @@ class SiteController extends Controller
             $visitor = new Visitor;
             $visitor->ip = $ip;
             $visitor->first_visit = $ts;
-            $visitor->count = 0;
+            $visitor->num_visits = 0;
         }
         $visitor->last_visit = ts;
-        $visitor->count++;
+        $visitor->num_visits++;
         $visitor->save();
         
         return $this->render('index');
