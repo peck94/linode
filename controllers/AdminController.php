@@ -6,6 +6,7 @@ use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
+use app\models\Login;
 
 class AdminController extends Controller
 {
@@ -47,6 +48,20 @@ class AdminController extends Controller
         {
             return $this->redirect(\Yii::$app->urlManager->createUrl('site/login'));
         }
+        
+        $ip = $_SERVER['REMOTE_ADDR'];
+        $model = Login::find()->where([
+                    'ip' => $ip,
+                    'username' => $this->username,
+                ])->one();
+        if (!$model) {
+            $model = new Login;
+            $model->ip = $ip;
+            $model->username = $this->username;
+        }
+        $model->date = date('d M Y, H:i:s');
+        $model->save();
+
         return $this->render('index');
     }
 }

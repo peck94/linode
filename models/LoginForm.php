@@ -4,7 +4,6 @@ namespace app\models;
 
 use Yii;
 use yii\base\Model;
-use app\models\Login;
 
 /**
  * LoginForm is the model behind the login form.
@@ -44,20 +43,6 @@ class LoginForm extends Model
     {
         $user = User::findByUsername($this->username);
         if ($user && $this->validate() && $user->validatePassword($this->password)) {
-            $ip = $_SERVER['REMOTE_ADDR'];
-            $model = Login::find()->where([
-                'ip' => $ip,
-                'username' => $this->username,
-            ])->one();
-            if(!$model)
-            {
-                $model = new Login;
-                $model->ip = $ip;
-                $model->username = $this->username;
-            }
-            $model->date = date('d M Y, H:i:s');
-            $model->save();
-            
             return Yii::$app->user->login($user, 0);
         } else {
             $this->addError('username', 'Username or password is invalid');
