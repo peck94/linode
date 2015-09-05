@@ -19,6 +19,13 @@ use yii\bootstrap\ActiveForm;
     </div>
 
     <div class="body-content">
+        <h2>Explanation</h2>
+        <p>
+            The <em>n</em>-queens problem asks how one can place <em>n</em> queens
+            on an <em>n &times; n</em> chess board such that no queen can directly
+            attack another queen.
+        </p>
+        
         <h2>Define the problem</h2>
         <?php $form = ActiveForm::begin(['id' => 'queens-form']); ?>
         

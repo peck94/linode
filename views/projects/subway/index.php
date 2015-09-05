@@ -16,6 +16,10 @@ use yii\bootstrap\ActiveForm;
         <p class="lead">
             Create efficient subway networks.
         </p>
+    </div>
+
+    <div class="body-content">
+        <h2>Explanation</h2>
         <p>
             Given the size of the network, the algorithm uniformly distributes random
             points within a square. These points represent locations to be interconnected
@@ -32,9 +36,7 @@ use yii\bootstrap\ActiveForm;
             wasting the consumers' time. We might accomplish this by also attempting to minimize
             the length of the longest path in the graph, something I could do if I felt like it.
         </p>
-    </div>
-
-    <div class="body-content">
+        
         <h2>Define the problem</h2>
         <?php $form = ActiveForm::begin(['id' => 'subway-form']); ?>
         

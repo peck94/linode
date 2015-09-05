@@ -17,7 +17,11 @@ use yii\bootstrap\ActiveForm;
             Secret pasties.
             Basically a Pastebin clone but with encryption!
         </p>
-        <p style="text-align: left">
+    </div>
+
+    <div class="body-content">
+        <h2>Explanation</h2>
+        <p>
             The system works as follows:
             <ol style="text-align: left">
                 <li>You enter a passphrase and a secret message</li>
@@ -36,9 +40,7 @@ use yii\bootstrap\ActiveForm;
             Furthermore, Twofish has withstood cryptanalysis for quite a while, so the contents of the message
             should be equally safe against any probabilistic polynomial-time adversary.
         </p>
-    </div>
-
-    <div class="body-content">
+        
         <h2>Create a new spastie</h2>
         <?php if (Yii::$app->session->hasFlash('pastieCreated')): ?>
 
