@@ -57,7 +57,7 @@ class AdminController extends Controller
         if (!$model) {
             $model = new Login;
             $model->ip = $ip;
-            $model->username = $this->username;
+            $model->username = Yii::$app->user->identity->username;
         }
         $model->date = date('d M Y, H:i:s');
         $model->save();
