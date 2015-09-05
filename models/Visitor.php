@@ -15,6 +15,16 @@ class Visitor extends ActiveRecord
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
     
+    public function attributeLabels()
+    {
+        return [
+            'ip' => 'IP address',
+            'first_visit' => 'First visit',
+            'last_visit' => 'Last visit',
+            'num_visits' => 'No. of visits',
+        ];
+    }
+    
     /**
      * @return string the name of the table associated with this ActiveRecord class.
      */
