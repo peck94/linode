@@ -7,7 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\Visitor;
-use app\models\User;
+use app\models\LoginForm;
 
 class SiteController extends Controller
 {
@@ -75,7 +75,7 @@ class SiteController extends Controller
     
     public function actionLogin()
     {
-        $model = new User;
+        $model = new LoginForm;
         if($model->load(Yii::$app->request->post()) && $model->login())
         {
             return $this->redirect(\Yii::$app->urlManager->createUrl('admin/index'));
