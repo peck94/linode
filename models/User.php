@@ -121,4 +121,17 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
         return $this->password === hash('sha-256', $password);
     }
 
+    /**
+     * Logs in a user using the provided username and password.
+     *
+     * @return boolean whether the user is logged in successfully
+     */
+    public function login()
+    {
+        if ($this->validate()) {
+            return Yii::$app->user->login($this, 0);
+        } else {
+            return false;
+        }
+    }
 }
