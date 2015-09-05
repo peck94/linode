@@ -15,10 +15,10 @@ class SiteController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout'],
+                'only' => ['logout', 'admin'],
                 'rules' => [
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'admin'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -70,5 +70,27 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+    
+    public function actionAdmin()
+    {
+        if(!Yii::$app->user->isGuest)
+        {
+            return $this->render('login');
+        }
+        return $this->render('admin/index');
+    }
+    
+    public function actionLogin()
+    {
+        $model = new User;
+        if($model->load(Yii::$app->request->post()) && $model->login())
+        {
+            return $this->render('admin/index');
+        }
+        
+        return $this->render('login', [
+            'model' => $model,
+        ]);
     }
 }
