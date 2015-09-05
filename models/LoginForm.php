@@ -47,7 +47,6 @@ class LoginForm extends Model
             if($status)
             {
                 Yii::$app->params['LOGIN_ADDR'] = $_SERVER['REMOTE_ADDR'];
-                die('IP: ' . Yii::$app->params['LOGIN_ADDR']);
                 return true;
             }else{
                 return false;
