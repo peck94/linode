@@ -16,6 +16,17 @@ $this->params['breadcrumbs'][] = $this->title;
     </div>
 
     <div class="body-content">
-        
+        <h2>Visitor list</h2>
+        <?=
+        GridView::widget([
+            'dataProvider' => Visitor::dataProvider(),
+            'columns' => [
+                'ip',
+                'first_visit',
+                'last_visit',
+                'num_visits',
+            ],
+        ])
+        ?>
     </div>
 </div>

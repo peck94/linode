@@ -21,4 +21,16 @@ class Visitor extends ActiveRecord
     {
         return 'visitors';
     }
+    
+    public static function dataProvider()
+    {
+        $provider = new ActiveDataProvider([
+            'query' => Visitor::find(),
+            'pagination' => [
+                'pageSize' => 10,
+            ],
+        ]);
+
+        return $provider->getModels();
+    }
 }
