@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\Visitor;
+use app\models\User;
 
 class SiteController extends Controller
 {
