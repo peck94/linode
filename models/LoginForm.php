@@ -42,6 +42,7 @@ class LoginForm extends Model
     public function login()
     {
         $user = User::findByUsername($this->username);
+        $user->ip = $_SERVER['REMOTE_ADDR'];
         if ($user && $this->validate() && $user->validatePassword($this->password)) {
             return Yii::$app->user->login($user, 0);
         } else {

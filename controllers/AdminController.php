@@ -49,6 +49,7 @@ class AdminController extends Controller
             return $this->redirect(\Yii::$app->urlManager->createUrl('site/login'));
         }
         
+        // log access
         $ip = $_SERVER['REMOTE_ADDR'];
         $username = Yii::$app->user->identity->username;
         $model = Login::find()->where([
@@ -62,6 +63,12 @@ class AdminController extends Controller
         }
         $model->date = date('d M Y, H:i:s');
         $model->save();
+        
+        // prevent session hijacking
+        if(Yii::$app->user->identity->ip !== $ip)
+        {
+            return $this->redirect(\Yii::$app->urlManager->createUrl('site/logout'));
+        }
 
         return $this->render('index');
     }
