@@ -50,14 +50,15 @@ class AdminController extends Controller
         }
         
         $ip = $_SERVER['REMOTE_ADDR'];
+        $username = Yii::$app->user->identity->username;
         $model = Login::find()->where([
                     'ip' => $ip,
-                    'username' => $this->username,
+                    'username' => $username,
                 ])->one();
         if (!$model) {
             $model = new Login;
             $model->ip = $ip;
-            $model->username = Yii::$app->user->identity->username;
+            $model->username = $username;
         }
         $model->date = date('d M Y, H:i:s');
         $model->save();
