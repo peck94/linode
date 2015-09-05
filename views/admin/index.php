@@ -6,6 +6,7 @@ $this->title = 'Administration';
 $this->params['breadcrumbs'][] = $this->title;
 
 use yii\grid\GridView;
+use app\models\Visitor;
 ?>
 <div class="site-index">
 
