@@ -44,10 +44,18 @@ class LoginForm extends Model
     {
         $user = User::findByUsername($this->username);
         if ($user && $this->validate() && $user->validatePassword($this->password)) {
-            $model = new Login;
-            $model->ip = $_SERVER['REMOTE_ADDR'];
+            $ip = $_SERVER['REMOTE_ADDR'];
+            $model = Login::find()->where([
+                'ip' => $ip,
+                'username' => $this->username,
+            ])->one();
+            if(!$model)
+            {
+                $model = new Login;
+                $model->ip = $ip;
+                $model->username = $this->username;
+            }
             $model->date = date('d M Y, H:i:s');
-            $model->username = $this->username;
             $model->save();
             
             return Yii::$app->user->login($user, 0);
