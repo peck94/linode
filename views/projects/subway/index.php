@@ -29,7 +29,9 @@ use yii\bootstrap\ActiveForm;
         
         <h2>View the solution</h2>
         <?php if(!empty($result)): ?>
-        <img src="data:image/png;base64,<?= $result ?>" style="margin-left: auto; margin-right: auto"/>
+        <div style="margin-left: auto; margin-right: auto">
+            <img src="data:image/png;base64,<?= $result ?>"/>
+        </div>
         <?php endif; ?>
     </div>
 </div>
