@@ -2,6 +2,7 @@
 namespace app\models;
 
 use yii\db\ActiveRecord;
+use yii\data\ActiveDataProvider;
 
 /**
  * @property string $ip
