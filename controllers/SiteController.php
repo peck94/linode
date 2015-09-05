@@ -73,21 +73,12 @@ class SiteController extends Controller
         return $this->render('about');
     }
     
-    public function actionAdmin()
-    {
-        if(!Yii::$app->user->isGuest)
-        {
-            return $this->render('login');
-        }
-        return $this->render('admin/index');
-    }
-    
     public function actionLogin()
     {
         $model = new User;
         if($model->load(Yii::$app->request->post()) && $model->login())
         {
-            return $this->render('admin/index');
+            return $this->redirect('admin/index');
         }
         
         return $this->render('login', [
