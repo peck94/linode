@@ -85,4 +85,10 @@ class SiteController extends Controller
             'model' => $model,
         ]);
     }
+    
+    public function actionLogout()
+    {
+        Yii::$app->user->logout();
+        $this->redirect('index');
+    }
 }
