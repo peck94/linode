@@ -67,7 +67,6 @@ class AdminController extends Controller
         // prevent session hijacking
         if(Yii::$app->session['ip'] != $ip)
         {
-            die(Yii::$app->session['ip'] . ' does not match ' . $ip);
             return $this->redirect(\Yii::$app->urlManager->createUrl('site/logout'));
         }
 
