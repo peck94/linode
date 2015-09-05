@@ -5,10 +5,9 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 
-class SatForm extends Model
+class SubwayForm extends Model
 {
-    public $formula;
-    public $action;
+    public $size;
 
     /**
      * @return array customized attribute labels
@@ -16,8 +15,7 @@ class SatForm extends Model
     public function attributeLabels()
     {
         return [
-            'rules' => 'Grammar rules',
-            'action' => 'Action',
+            'size' => 'No. of stations',
         ];
     }
 
@@ -27,19 +25,18 @@ class SatForm extends Model
     public function rules()
     {
         return [
-            [['rules', 'action'], 'required'],
+            [['size'], 'required'],
         ];
     }
     
     /**
-     * Execute operation
+     * Execute operation on grammar
      */
     public function execute()
     {
-        $url = 'http://linode.pecky.be/cgi-bin/sat/main.py';
+        $url = 'http://linode.pecky.be/cgi-bin/subway/main.py';
         $data = array(
-            'formula' => $this->rules,
-            'cmd' => $this->action,
+            'size' => $this->size,
         );
 
         $options = array(

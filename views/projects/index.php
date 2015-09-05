@@ -55,11 +55,11 @@ use yii\helpers\Html;
             </div>
             
             <div class="col-lg-4">
-                <h2>SAT</h2>
+                <h2>Subway</h2>
                 <p>
-                    SAT-solving for fun and profit.
+                    Create efficient subway networks.
                 </p>
-                <p><?= Html::a('SAT &raquo;', ['/projects/sat'], ['class' => 'btn btn-default']) ?></p>
+                <p><?= Html::a('Subway &raquo;', ['/projects/subway'], ['class' => 'btn btn-default']) ?></p>
             </div>
         </div>
 
