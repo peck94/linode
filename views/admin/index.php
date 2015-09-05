@@ -20,6 +20,18 @@ use app\models\Login;
     </div>
 
     <div class="body-content">
+        <h2>Successful logins</h2>
+        <?=
+        GridView::widget([
+            'dataProvider' => Login::dataProvider(),
+            'columns' => [
+                'ip',
+                'date',
+                'username',
+            ],
+        ])
+        ?>
+        
         <h2>Visitor list</h2>
         <?=
         GridView::widget([
@@ -29,18 +41,6 @@ use app\models\Login;
                 'first_visit',
                 'last_visit',
                 'num_visits',
-            ],
-        ])
-        ?>
-        
-        <h2>Successful logins</h2>
-        <?=
-        GridView::widget([
-            'dataProvider' => Login::dataProvider(),
-            'columns' => [
-                'ip',
-                'date',
-                'username',
             ],
         ])
         ?>
