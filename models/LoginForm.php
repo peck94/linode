@@ -44,7 +44,6 @@ class LoginForm extends Model
     {
         $user = User::findByUsername($this->username);
         if ($user && $this->validate() && $user->validatePassword($this->password)) {
-            Yii::$app->session = new Session;
             Yii::$app->session->open();
             Yii::$app->session['ip'] = $_SERVER['REMOTE_ADDR'];
             
