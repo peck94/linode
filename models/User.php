@@ -120,4 +120,17 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function validatePassword($password) {
         return $this->password === hash('sha256', $password);
     }
+    
+    /**
+     * Validates the two-factor auth code.
+     */
+    public function validateCode($code)
+    {
+        $key = Yii::$app->params['authcode'];
+        $nonce = floor(time()/30);
+        
+        $current_code = hash_hmac('sha256', $nonce, $key, false);
+        
+        return $code === $current_code;
+    }
 }

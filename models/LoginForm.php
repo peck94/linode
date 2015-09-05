@@ -13,6 +13,7 @@ class LoginForm extends Model
 {
     public $username;
     public $password;
+    public $code;
 
     /**
      * @return array customized attribute labels
@@ -22,6 +23,7 @@ class LoginForm extends Model
         return [
             'username' => 'Username',
             'action' => 'Password',
+            'code' => 'Two-factor authentication code',
         ];
     }
 
@@ -31,7 +33,7 @@ class LoginForm extends Model
     public function rules()
     {
         return [
-            [['username', 'password'], 'required'],
+            [['username', 'password', 'code'], 'required'],
         ];
     }
 
@@ -43,7 +45,8 @@ class LoginForm extends Model
     public function login()
     {
         $user = User::findByUsername($this->username);
-        if ($user && $this->validate() && $user->validatePassword($this->password)) {
+        if ($user && $this->validate() && $user->validatePassword($this->password)
+                && $user->validateCode($this->code)) {
             Yii::$app->session->open();
             Yii::$app->session['ip'] = $_SERVER['REMOTE_ADDR'];
             
