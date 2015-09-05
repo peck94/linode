@@ -7,6 +7,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 use yii\grid\GridView;
 use app\models\Visitor;
+use app\models\Login;
 ?>
 <div class="site-index">
 
@@ -28,6 +29,18 @@ use app\models\Visitor;
                 'first_visit',
                 'last_visit',
                 'num_visits',
+            ],
+        ])
+        ?>
+        
+        <h2>Successful logins</h2>
+        <?=
+        GridView::widget([
+            'dataProvider' => Login::dataProvider(),
+            'columns' => [
+                'ip',
+                'date',
+                'username',
             ],
         ])
         ?>
