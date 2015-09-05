@@ -32,6 +32,6 @@ class Visitor extends ActiveRecord
             ],
         ]);
 
-        return $provider->getModels();
+        return $provider;
     }
 }
