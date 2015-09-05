@@ -45,7 +45,7 @@ class AdminController extends Controller
     {
         if(!Yii::$app->user->isGuest)
         {
-            return $this->redirect('/site/login');
+            return $this->redirect(\Yii::$app->urlManager->createUrl('site/login'));
         }
         return $this->render('admin/index');
     }

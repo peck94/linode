@@ -78,7 +78,7 @@ class SiteController extends Controller
         $model = new User;
         if($model->load(Yii::$app->request->post()) && $model->login())
         {
-            return $this->redirect('admin/index');
+            return $this->redirect(\Yii::$app->urlManager->createUrl('admin/index'));
         }
         
         return $this->render('login', [
