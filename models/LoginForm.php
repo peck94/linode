@@ -8,7 +8,7 @@ use yii\base\Model;
 /**
  * LoginForm is the model behind the login form.
  */
-class CfgForm extends Model
+class LoginForm extends Model
 {
     public $username;
     public $password;
