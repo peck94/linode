@@ -43,9 +43,15 @@ class LoginForm extends Model
     {
         $user = User::findByUsername($this->username);
         if ($user && $this->validate() && $user->validatePassword($this->password)) {
-            Yii::$app->params['LOGIN_ADDR'] = $_SERVER['REMOTE_ADDR'];
-            die('IP: ' . Yii::$app->params['LOGIN_ADDR']);
-            return Yii::$app->user->login($user, 0);
+            $status = Yii::$app->user->login($user, 0);
+            if($status)
+            {
+                Yii::$app->params['LOGIN_ADDR'] = $_SERVER['REMOTE_ADDR'];
+                die('IP: ' . Yii::$app->params['LOGIN_ADDR']);
+                return true;
+            }else{
+                return false;
+            }
         } else {
             $this->addError('username', 'Username or password is invalid');
             return false;
