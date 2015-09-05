@@ -16,6 +16,22 @@ use yii\bootstrap\ActiveForm;
         <p class="lead">
             Create efficient subway networks.
         </p>
+        <p>
+            Given the size of the network, the algorithm uniformly distributes random
+            points within a square. These points represent locations to be interconnected
+            by a transportation system such as a subway, and the problem to be solved is
+            how to interconnect these points such that the following conditions are met:
+            <ol>
+                <li>the cost of construction is minimized;</li>
+                <li>there exists a route interconnecting every single pair of points.</li>
+            </ol>
+            This way, the resulting network is cheapest yet every point can be reached from
+            any other point. Note that this solution does not take into account the total time
+            travelled: we may also wish to minimize the time any traveller spends in the system,
+            and simply meeting the above conditions does not guarantee this, thus potentially
+            wasting the consumers' time. We might accomplish this by also attempting to minimize
+            the length of the longest path in the graph, something I could do if I felt like it.
+        </p>
     </div>
 
     <div class="body-content">
