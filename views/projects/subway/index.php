@@ -35,6 +35,10 @@ use yii\bootstrap\ActiveForm;
             and simply meeting the above conditions does not guarantee this, thus potentially
             wasting the consumers' time. We might accomplish this by also attempting to minimize
             the length of the longest path in the graph, something I could do if I felt like it.
+            The problem of finding the longest path in a graph is NP-hard in general, but the graphs
+            we produce here will always be acyclic, and in this special case there does exist an
+            efficient algorithm to compute the longest path. However, it is too tedious and boring
+            to implement that right now.
         </p>
         
         <h2>Define the problem</h2>
