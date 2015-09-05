@@ -23,6 +23,7 @@ use yii\bootstrap\ActiveForm;
         
         <?= $form->field($model, 'username') ?>
         <?= $form->field($model, 'password')->passwordInput() ?>
+        <?= $form->field($model, 'code') ?>
 
         <?= Html::submitButton('Login', ['class' => 'btn btn-primary']) ?>
         <?php ActiveForm::end(); ?>
