@@ -47,6 +47,6 @@ class AdminController extends Controller
         {
             return $this->redirect(\Yii::$app->urlManager->createUrl('site/login'));
         }
-        return $this->render('admin/index');
+        return $this->render('index');
     }
 }
