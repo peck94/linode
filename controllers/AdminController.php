@@ -43,7 +43,7 @@ class AdminController extends Controller
     
     public function actionIndex()
     {
-        if(!Yii::$app->user->isGuest)
+        if(Yii::$app->user->isGuest)
         {
             return $this->redirect(\Yii::$app->urlManager->createUrl('site/login'));
         }

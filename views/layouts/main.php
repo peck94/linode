@@ -40,7 +40,7 @@ AppAsset::register($this);
             ['label' => 'Projects', 'url' => ['/projects']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
-            ['label' => 'Admin', 'url' => ['/site/admin']],
+            ['label' => 'Admin', 'url' => ['/admin/index']],
         ],
     ]);
     NavBar::end();
