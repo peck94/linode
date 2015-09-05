@@ -13,8 +13,6 @@ use Yii;
  */
 class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
-    public $ip;
-    
     /**
      * @inheritdoc
      */
@@ -29,7 +27,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'password', 'ip'], 'required'],
+            [['username', 'password'], 'required'],
             [['username', 'password'], 'string', 'max' => 100]            
         ];
     }
@@ -43,7 +41,6 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'id' => 'ID',
             'username' => 'Username',
             'password' => 'Password',
-            'ip' => 'IP address',
         ];
     }
     
