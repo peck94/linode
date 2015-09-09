@@ -12,6 +12,7 @@ use app\models\NonsenseForm;
 use app\models\CfgForm;
 use app\models\QueenForm;
 use app\models\SubwayForm;
+use app\models\MasterPassForm;
 
 class ProjectsController extends Controller
 {
@@ -138,6 +139,15 @@ class ProjectsController extends Controller
         return $this->render('subway/index',[
             'model' => $model,
             'result' => $result,
+        ]);
+    }
+    
+    public function actionMasterpass()
+    {
+        $model = new MasterPassForm;
+        
+        return $this->render('masterpass/index', [
+            'model' => $model,
         ]);
     }
 }

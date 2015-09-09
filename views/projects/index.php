@@ -61,6 +61,14 @@ use yii\helpers\Html;
                 </p>
                 <p><?= Html::a('Subway &raquo;', ['/projects/subway'], ['class' => 'btn btn-default']) ?></p>
             </div>
+            
+            <div class="col-lg-4">
+                <h2>MasterPass</h2>
+                <p>
+                    Remembering tens of different, complicated passwords is so 2005.
+                </p>
+                <p><?= Html::a('MasterPass &raquo;', ['/projects/masterpass'], ['class' => 'btn btn-default']) ?></p>
+            </div>
         </div>
 
     </div>
