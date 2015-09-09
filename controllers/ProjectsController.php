@@ -145,9 +145,15 @@ class ProjectsController extends Controller
     public function actionMasterpass()
     {
         $model = new MasterPassForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->generate();
+        }
         
         return $this->render('masterpass/index', [
             'model' => $model,
+            'result' => $result,
         ]);
     }
 }
