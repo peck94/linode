@@ -70,6 +70,15 @@ use yii\helpers\Html;
                 <p><?= Html::a('MasterPass &raquo;', ['/projects/masterpass'], ['class' => 'btn btn-default']) ?></p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Cellular automata</h2>
+                <p>
+                    Visualize all 256 simple cellular automata.
+                </p>
+                <p><?= Html::a('Cellular automata &raquo;', ['/projects/automata'], ['class' => 'btn btn-default']) ?></p>
+            </div>
+        </div>
 
     </div>
 </div>

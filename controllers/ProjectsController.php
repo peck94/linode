@@ -13,6 +13,7 @@ use app\models\CfgForm;
 use app\models\QueenForm;
 use app\models\SubwayForm;
 use app\models\MasterPassForm;
+use app\models\AutomataForm;
 
 class ProjectsController extends Controller
 {
@@ -154,6 +155,15 @@ class ProjectsController extends Controller
         return $this->render('masterpass/index', [
             'model' => $model,
             'result' => $result,
+        ]);
+    }
+    
+    public function actionAutomata()
+    {
+        $model = new AutomataForm;
+        
+        return $this->render('automata/index', [
+            'model' => $model,
         ]);
     }
 }
