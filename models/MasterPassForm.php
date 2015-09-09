@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 
-class NonsenseForm extends Model
+class MasterPassForm extends Model
 {
     public $master;
     public $name;
