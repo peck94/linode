@@ -64,16 +64,11 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
-        $url = 'http://linode.pecky.be/cgi-bin/services/whois.sh';
-        $data = array(
-            'ip' => $_SERVER['REMOTE_ADDR'],
-        );
-
+        $url = 'http://linode.pecky.be/cgi-bin/services/whois.sh?ip=' . $_SERVER['REMOTE_ADDR'];
         $options = array(
             'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
-                'method'  => 'POST',
-                'content' => http_build_query($data),
+                'header'  => "Content-type: text/html\r\n",
+                'method'  => 'GET',
             ),
         );
         $context  = stream_context_create($options);
