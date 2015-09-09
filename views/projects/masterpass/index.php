@@ -38,7 +38,7 @@ use yii\bootstrap\ActiveForm;
 
         <?= $form->field($model, 'master')->passwordInput() ?>
         <p>
-            Please make sure you master key is <strong>secret</strong> and
+            Please make sure your master key is <strong>secret</strong> and
             <strong>strong</strong>. I would recommend, for example, a nice long
             quote from your favorite 19th century philosopher.
         </p>
