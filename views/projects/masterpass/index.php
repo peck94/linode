@@ -30,7 +30,9 @@ use yii\bootstrap\ActiveForm;
             <li>The output of the HMAC is your derived password</li>
         </ol>
         This way, you only need to remember the master password, since the name
-        will (or should) be public information anyway.
+        will (or should) be public information anyway. The generated password will
+        be completely different for each name you enter, even though the master key
+        stays the same.
         
         <h2>Enter details</h2>
 
@@ -44,6 +46,9 @@ use yii\bootstrap\ActiveForm;
         </p>
         
         <?= $form->field($model, 'name') ?>
+        <p>
+            Examples: Google, Gmail, Facebook, Youtube, ...
+        </p>
 
         <div class="form-group">
             <?= Html::submitButton('Generate', ['class' => 'btn btn-primary']) ?>
