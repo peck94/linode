@@ -161,9 +161,15 @@ class ProjectsController extends Controller
     public function actionAutomata()
     {
         $model = new AutomataForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->generate();
+        }
         
         return $this->render('automata/index', [
             'model' => $model,
+            'result' => $result,
         ]);
     }
 }
