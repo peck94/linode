@@ -64,7 +64,24 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
-        return $this->render('about');
+        $url = 'http://linode.pecky.be/cgi-bin/services/whois.sh';
+        $data = array(
+            'ip' => $_SERVER['REMOTE_ADDR'],
+        );
+
+        $options = array(
+            'http' => array(
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'method'  => 'POST',
+                'content' => http_build_query($data),
+            ),
+        );
+        $context  = stream_context_create($options);
+        $result = file_get_contents($url, false, $context);
+        
+        return $this->render('about', [
+            'whois' => $result,
+        ]);
     }
     
     public function actionLogin()
