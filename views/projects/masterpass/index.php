@@ -37,6 +37,12 @@ use yii\bootstrap\ActiveForm;
         <?php $form = ActiveForm::begin(['id' => 'masterpass-form']); ?>
 
         <?= $form->field($model, 'master')->passwordInput() ?>
+        <p>
+            Please make sure you master key is <strong>secret</strong> and
+            <strong>strong</strong>. I would recommend, for example, a nice long
+            quote from your favorite 19th century philosopher.
+        </p>
+        
         <?= $form->field($model, 'name') ?>
 
         <div class="form-group">
