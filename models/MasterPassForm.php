@@ -33,7 +33,7 @@ class MasterPassForm extends Model
     
     public function generate()
     {
-        return hash_hmac('sha256', $this->name, $this->key, false);
+        return hash_hmac('sha256', $this->name, $this->master, false);
     }
 
 }
