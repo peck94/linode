@@ -55,10 +55,17 @@ AppAsset::register($this);
         ]) ?>
         <?php if(!isset($_SERVER['HTTPS'])): ?>
         <div class="alert alert-danger">
-            I recommend using this site <a href="https://www.pecky.be/">over a secure connection</a>,
-            as some projects on here require you to enter possibly sensitive information. If anyone
-            were to intercept your connection (say, the NSA or your own friendly government), that
-            could completely defeat the purpose of these applications. It might also put you at risk.
+            <p>
+                I recommend using this site over a secure connection,
+                as some projects on here require you to enter possibly sensitive information. If anyone
+                were to intercept your connection (say, the NSA or your own friendly government), that
+                could completely defeat the purpose of these applications. It might also put you at risk.
+            </p>
+            <p>
+                <a href="https://<?= $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI] ?>" class="btn btn-primary">
+                    Use secure connection
+                </a>
+            </p>
         </div>
         <?php endif; ?>
         <?= $content ?>
