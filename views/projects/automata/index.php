@@ -25,6 +25,9 @@ use yii\bootstrap\ActiveForm;
         <?php $form = ActiveForm::begin(['id' => 'automata-form']); ?>
 
         <?= $form->field($model, 'rule') ?>
+        <p>
+            Interesting values include: 30, 90, 110.
+        </p>
 
         <div class="form-group">
             <?= Html::submitButton('Visualize', ['class' => 'btn btn-primary']) ?>
