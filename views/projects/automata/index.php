@@ -57,6 +57,14 @@ $items = [
             or a single byte (i.e. a value from 0 to 255 inclusive). This means
             there are exactly 256 possible distinct elementary cellular automata.
         </p>
+        <p>
+            In general, a <em>d</em> dimensional cellular automaton will have
+            3<sup>d</sup> immediate neighbors. The number of states is then equal
+            to 2<sup>(3<sup>d</sup>)</sup>, and we may summarize such an automaton
+            by a 2<sup>(3<sup>d</sup>)</sup>-bit number. In conclusion, there are
+            2<sup>(2<sup>(3<sup>d</sup>)</sup>)</sup> cellular automata in <em>d</em>
+            dimensions.
+        </p>
         
         <h2>Enter details</h2>
 
