@@ -8,6 +8,7 @@ use yii\base\Model;
 class AutomataForm extends Model
 {
     public $rule;
+    public $initial;
 
     /**
      * @return array customized attribute labels
@@ -16,6 +17,7 @@ class AutomataForm extends Model
     {
         return [
             'rule' => 'Rule number (0-255)',
+            'initial' => 'Initial row',
         ];
     }
 
@@ -25,7 +27,7 @@ class AutomataForm extends Model
     public function rules()
     {
         return [
-            [['rule'], 'required'],
+            [['rule', 'initial'], 'required'],
         ];
     }
     
@@ -34,6 +36,7 @@ class AutomataForm extends Model
         $url = 'http://linode.pecky.be/cgi-bin/automaton/main.py';
         $data = array(
             'rule' => $this->rule,
+            'initial' => $this->initial,
         );
 
         $options = array(

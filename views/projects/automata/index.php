@@ -8,6 +8,11 @@ $this->params['breadcrumbs'][] = $this->title;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
+$items = [
+    'single' => 'Traditional',
+    'random' => 'Random',
+];
+
 ?>
 <div class="site-index">
 
@@ -28,6 +33,8 @@ use yii\bootstrap\ActiveForm;
         <p>
             Interesting values include: 30, 90, 110.
         </p>
+        
+        <?= $form->field($model, 'initial')->dropdownList($items) ?>
 
         <div class="form-group">
             <?= Html::submitButton('Visualize', ['class' => 'btn btn-primary']) ?>
