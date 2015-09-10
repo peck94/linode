@@ -11,9 +11,22 @@ $ip = htmlspecialchars($_SERVER['REMOTE_ADDR']);
 <div class="site-about">
     <h1>About me</h1>
     <p>
-        This is where I'd write something about me.
-        However, that's boring, so I haven't gotten around to this yet.
-        Stalkers, stay tuned!
+        <strong>Name:</strong> Peck
+        <br>
+        <strong>First name:</strong> Jonathan
+        <br>
+        <strong>Occupation:</strong> Student at <a href="http://www.ugent.be/">Ghent University</a>
+        <br>
+        <strong>Degrees:</strong>
+        <ol>
+            <li>Bachelor of Science in Computer Science (2015)</li>
+        </ol>
+        <br>
+        <strong>Main fields of interest:</strong>
+        <ul>
+            <li>Cryptography</li>
+            <li>Formal language theory</li>
+        </ul>
     </p>
     
     <h1>About you</h1>

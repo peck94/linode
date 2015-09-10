@@ -74,7 +74,7 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; Pecky <?= date('Y') ?></p>
+        <p class="pull-left">&copy; Jonathan Peck <?= date('Y') ?></p>
 
         <p class="pull-right"><?= Yii::powered() ?></p>
     </div>
