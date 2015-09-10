@@ -63,7 +63,30 @@ $items = [
             to 2<sup>(3<sup>d</sup>)</sup>, and we may summarize such an automaton
             by a 2<sup>(3<sup>d</sup>)</sup>-bit number. In conclusion, there are
             2<sup>(2<sup>(3<sup>d</sup>)</sup>)</sup> cellular automata in <em>d</em>
-            dimensions.
+            dimensions. To get an idea for how massive this number gets even in small
+            dimensions, here are its first three values:
+            <br>
+            <table class="table">
+                <tr>
+                    <th><em>d = 1</em></th>
+                    <td>
+                        2<sup>8</sup> = 256
+                    </td>
+                </tr>
+                <tr>
+                    <th><em>d = 2</em></th>
+                    <td>
+                        2<sup>512</sup>
+                    </td>
+                </tr>
+                <tr>
+                    <th><em>d = 3</em></th>
+                    <td>
+                        2<sup>134,217,728</sup>
+                    </td>
+                </tr>
+            </table>
+            The number is practically non-computable for three dimensions.
         </p>
         
         <h2>Enter details</h2>
