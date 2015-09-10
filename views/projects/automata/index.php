@@ -34,7 +34,7 @@ $items = [
             (left and right) neighbors. This means a single rule may be summarized
             in four bits, as in the table below:
             <br>
-            <table>
+            <table class="table">
                 <tr>
                     <th>Left</th>
                     <th>Current</th>
