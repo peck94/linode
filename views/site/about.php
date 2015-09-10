@@ -35,6 +35,12 @@ $ip = htmlspecialchars($_SERVER['REMOTE_ADDR']);
     </p>
     <p>
         <strong>Your IP:</strong> <?= $ip; ?>
+        <?php
+            foreach(getallheaders() as $name => $value):
+        ?>
+        <br>
+        <strong><?= $name ?>:</strong> <?= $value ?>
+        <?php endforeach; ?>
         <pre><?= $whois ?></pre>
     </p>
 </div>
