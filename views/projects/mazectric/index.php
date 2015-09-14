@@ -8,7 +8,7 @@ $this->params['breadcrumbs'][] = $this->title;
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 
-$initial = [
+$items = [
     'rand' => 'Random',
 ];
 ?>
