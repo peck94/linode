@@ -78,6 +78,13 @@ use yii\helpers\Html;
                 </p>
                 <p><?= Html::a('Automata &raquo;', ['/projects/automata'], ['class' => 'btn btn-default']) ?></p>
             </div>
+            <div class="col-lg-4">
+                <h2>Mazectric'</h2>
+                <p>
+                    Generate complicated mazes.
+                </p>
+                <p><?= Html::a('Mazectric\' &raquo;', ['/projects/mazectric'], ['class' => 'btn btn-default']) ?></p>
+            </div>
         </div>
 
     </div>

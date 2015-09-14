@@ -14,6 +14,7 @@ use app\models\QueenForm;
 use app\models\SubwayForm;
 use app\models\MasterPassForm;
 use app\models\AutomataForm;
+use app\models\MazeForm;
 
 class ProjectsController extends Controller
 {
@@ -168,6 +169,21 @@ class ProjectsController extends Controller
         }
         
         return $this->render('automata/index', [
+            'model' => $model,
+            'result' => $result,
+        ]);
+    }
+    
+    public function actionMazectric()
+    {
+        $model = new MazeForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->generate();
+        }
+        
+        return $this->render('mazectric/index', [
             'model' => $model,
             'result' => $result,
         ]);
