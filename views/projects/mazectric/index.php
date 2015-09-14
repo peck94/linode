@@ -53,7 +53,7 @@ $items = [
 
         <h2>Result</h2>
         <?php if(!empty($result)): ?>
-        <img src="data:image/png;base64,<?= $result ?>" style="width: 640px; height: 480px"/>
+        <img src="data:image/png;base64,<?= $result ?>" style="width: 640px; height: 320px"/>
         <?php endif; ?>
     </div>
 </div>
