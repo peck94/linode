@@ -10,6 +10,8 @@ use yii\bootstrap\ActiveForm;
 
 $items = [
     'rand' => 'Random',
+    'line1' => 'Vertical line',
+    'line2' => 'Horizontal line',
 ];
 ?>
 <div class="site-index">
