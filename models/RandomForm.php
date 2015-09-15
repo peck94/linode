@@ -29,7 +29,7 @@ class RandomForm extends Model
     public function rules()
     {
         return [
-            [['seed, bits, count'], 'required'],
+            [['seed', 'bits', 'count'], 'required'],
         ];
     }
     
