@@ -35,11 +35,10 @@ class RandomForm extends Model
     
     public function generate()
     {
-        $url = 'http://linode.pecky.be/cgi-bin/random/main.py';
+        $url = 'http://linode.pecky.be/cgi-bin/automaton/main.py';
         $data = array(
-            'bits' => $this->bits,
-            'seed' => $this->seed,
-            'count' => $this->count,
+            'rule' => 90,
+            'initial' => 'random',
         );
 
         $options = array(
