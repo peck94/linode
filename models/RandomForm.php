@@ -44,7 +44,7 @@ class RandomForm extends Model
 
         $options = array(
             'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\n",
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\nContent-Length: 12\r\n",
                 'method'  => 'POST',
                 'content' => http_build_query($data),
             ),
