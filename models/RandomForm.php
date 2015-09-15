@@ -37,9 +37,9 @@ class RandomForm extends Model
     {
         $url = 'http://linode.pecky.be/cgi-bin/random/main.py';
         $data = array(
-            'seed' => 'test',
+            'seed' => $this->seed,
             'bits' => $this->bits,
-            'count' => 10,
+            'count' => $this->count,
         );
 
         $options = array(
