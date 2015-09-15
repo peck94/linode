@@ -85,6 +85,13 @@ use yii\helpers\Html;
                 </p>
                 <p><?= Html::a('Mazectric\' &raquo;', ['/projects/mazectric'], ['class' => 'btn btn-default']) ?></p>
             </div>
+            <div class="col-lg-4">
+                <h2>Random</h2>
+                <p>
+                    A pseudo-random number generator.
+                </p>
+                <p><?= Html::a('Random &raquo;', ['/projects/random'], ['class' => 'btn btn-default']) ?></p>
+            </div>
         </div>
 
     </div>

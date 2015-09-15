@@ -15,6 +15,7 @@ use app\models\SubwayForm;
 use app\models\MasterPassForm;
 use app\models\AutomataForm;
 use app\models\MazeForm;
+use app\models\RandomForm;
 
 class ProjectsController extends Controller
 {
@@ -184,6 +185,21 @@ class ProjectsController extends Controller
         }
         
         return $this->render('mazectric/index', [
+            'model' => $model,
+            'result' => $result,
+        ]);
+    }
+    
+    public function actionRandom()
+    {
+        $model = new RandomForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->generate();
+        }
+        
+        return $this->render('random/index', [
             'model' => $model,
             'result' => $result,
         ]);
