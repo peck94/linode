@@ -28,6 +28,7 @@ use yii\bootstrap\ActiveForm;
 
         <?php $form = ActiveForm::begin(['id' => 'automata-form']); ?>
 
+        <?= $form->field($model, 'seed') ?>
         <?= $form->field($model, 'bits') ?>
 
         <div class="form-group">

@@ -7,7 +7,9 @@ use yii\base\Model;
 
 class RandomForm extends Model
 {
+    public $seed;
     public $bits;
+    public $count;
 
     /**
      * @return array customized attribute labels
@@ -15,7 +17,9 @@ class RandomForm extends Model
     public function attributeLabels()
     {
         return [
+            'seed' => 'Seed',
             'bits' => 'Number of bits',
+            'count' => 'Number of results',
         ];
     }
 
@@ -25,7 +29,7 @@ class RandomForm extends Model
     public function rules()
     {
         return [
-            [['bits'], 'required'],
+            [['seed, bits, count'], 'required'],
         ];
     }
     
@@ -34,6 +38,8 @@ class RandomForm extends Model
         $url = 'http://linode.pecky.be/cgi-bin/random/main.py';
         $data = array(
             'bits' => $this->bits,
+            'seed' => $this->seed,
+            'count' => $this->count,
         );
 
         $options = array(
