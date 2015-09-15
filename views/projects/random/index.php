@@ -26,7 +26,7 @@ use yii\bootstrap\ActiveForm;
         
         <h2>Enter details</h2>
 
-        <?php $form = ActiveForm::begin(['id' => 'automata-form']); ?>
+        <?php $form = ActiveForm::begin(['id' => 'random-form']); ?>
 
         <?= $form->field($model, 'seed') ?>
         <?= $form->field($model, 'bits') ?>
