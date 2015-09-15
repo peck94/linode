@@ -30,6 +30,7 @@ use yii\bootstrap\ActiveForm;
 
         <?= $form->field($model, 'seed') ?>
         <?= $form->field($model, 'bits') ?>
+        <?= $form->field($model, 'count') ?>
 
         <div class="form-group">
             <?= Html::submitButton('Generate', ['class' => 'btn btn-primary']) ?>
