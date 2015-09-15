@@ -5,7 +5,7 @@ namespace app\models;
 use Yii;
 use yii\base\Model;
 
-class AutomataForm extends Model
+class RandomForm extends Model
 {
     public $bits;
 
