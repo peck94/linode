@@ -22,6 +22,10 @@ use yii\bootstrap\ActiveForm;
         <h2>Explanation</h2>
         <p>
             This PRNG uses the rule 30 cellular automaton as a source of randomness.
+            The supplied seed is hashed using SHA-256 and the resulting bits determine
+            the initial pattern. The automaton is then simulated for
+            <kbd>bits*count</kbd> iterations. The output is formed by the bits of
+            the middle column.
         </p>
         
         <h2>Enter details</h2>
