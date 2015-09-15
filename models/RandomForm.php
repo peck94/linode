@@ -41,10 +41,11 @@ class RandomForm extends Model
             'seed' => $this->seed,
             'count' => $this->count,
         );
+        $len = 8 + strlen($this->seed);
 
         $options = array(
             'http' => array(
-                'header'  => "Content-type: application/x-www-form-urlencoded\r\nContent-Length: 12\r\n",
+                'header'  => "Content-type: application/x-www-form-urlencoded\r\nContent-Length: $len\r\n",
                 'method'  => 'POST',
                 'content' => http_build_query($data),
             ),
