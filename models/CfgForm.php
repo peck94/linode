@@ -39,7 +39,7 @@ class CfgForm extends Model
      */
     public function execute()
     {
-        $url = 'http://linode.pecky.be/cgi-bin/pycfg/main.py';
+        $url = 'https://linode.pecky.be:80/cgi-bin/pycfg/main.py';
         $data = array(
             'rules' => $this->rules,
             'cmd' => $this->action,

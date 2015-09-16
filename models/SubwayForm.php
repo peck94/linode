@@ -34,7 +34,7 @@ class SubwayForm extends Model
      */
     public function execute()
     {
-        $url = 'http://linode.pecky.be/cgi-bin/subway/main.py';
+        $url = 'https://linode.pecky.be:80/cgi-bin/subway/main.py';
         $data = array(
             'size' => $this->size,
         );

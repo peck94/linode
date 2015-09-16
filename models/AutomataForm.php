@@ -33,7 +33,7 @@ class AutomataForm extends Model
     
     public function generate()
     {
-        $url = 'http://linode.pecky.be/cgi-bin/automaton/main.py';
+        $url = 'https://linode.pecky.be:80/cgi-bin/automaton/main.py';
         $data = array(
             'rule' => $this->rule,
             'initial' => $this->initial,

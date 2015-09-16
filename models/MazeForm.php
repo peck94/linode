@@ -31,7 +31,7 @@ class MazeForm extends Model
     
     public function generate()
     {
-        $url = 'http://linode.pecky.be/cgi-bin/maze/main.py';
+        $url = 'https://linode.pecky.be:80/cgi-bin/maze/main.py';
         $data = array(
             'initial' => $this->initial,
         );
