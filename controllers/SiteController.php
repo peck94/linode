@@ -64,7 +64,7 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
-        $url = 'http://linode.pecky.be/cgi-bin/services/whois.sh?ip=' . $_SERVER['REMOTE_ADDR'];
+        $url = 'https://linode.pecky.be:80/cgi-bin/services/whois.sh?ip=' . $_SERVER['REMOTE_ADDR'];
         $options = array(
             'http' => array(
                 'header'  => "Content-type: text/html\r\n",
