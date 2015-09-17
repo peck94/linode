@@ -9,6 +9,7 @@ use yii\data\ActiveDataProvider;
  * @property string $first_visit
  * @property string $last_visit
  * @property string $num_visits
+ * @property string $country
  */
 class Visitor extends ActiveRecord
 {
@@ -22,6 +23,7 @@ class Visitor extends ActiveRecord
             'first_visit' => 'First visit',
             'last_visit' => 'Last visit',
             'num_visits' => 'No. of visits',
+            'country' => 'Country',
         ];
     }
     
@@ -43,5 +45,11 @@ class Visitor extends ActiveRecord
         ]);
 
         return $provider;
+    }
+    
+    public function locate()
+    {
+        $result = json_decode(file_get_contents('http://www.ipinfo.io/' . $this->ip));
+        $this->country = $result['country'];
     }
 }

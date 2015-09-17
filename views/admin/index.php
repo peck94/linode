@@ -38,6 +38,7 @@ use app\models\Login;
             'dataProvider' => Visitor::dataProvider(),
             'columns' => [
                 'ip',
+                'country',
                 'first_visit',
                 'last_visit',
                 'num_visits',

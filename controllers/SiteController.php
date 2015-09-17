@@ -52,6 +52,7 @@ class SiteController extends Controller
         }
         $visitor->last_visit = $ts;
         $visitor->num_visits++;
+        $visitor->locate();
         $visitor->save();
         
         return $this->render('index');
