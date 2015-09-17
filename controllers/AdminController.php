@@ -7,6 +7,7 @@ use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use app\models\Login;
+use app\models\Visitor;
 
 class AdminController extends Controller
 {
