@@ -70,6 +70,7 @@ class AdminController extends Controller
             return $this->redirect(\Yii::$app->urlManager->createUrl('site/logout'));
         }
 
+        Visitor::locateMissing();
         return $this->render('index');
     }
 }

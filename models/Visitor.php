@@ -52,4 +52,13 @@ class Visitor extends ActiveRecord
         $result = json_decode(file_get_contents('http://www.ipinfo.io/' . $this->ip));
         $this->country = $result['country'];
     }
+    
+    public static function locateMissing()
+    {
+        $visitors = Visitor::findAll();
+        foreach($visitors as $visitor) {
+            $visitor->locate();
+            $visitor->save();
+        }
+    }
 }
