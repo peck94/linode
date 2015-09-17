@@ -55,7 +55,7 @@ class Visitor extends ActiveRecord
     
     public static function locateMissing()
     {
-        $visitors = Visitor::findAll();
+        $visitors = Visitor::find()->all();
         foreach($visitors as $visitor) {
             $visitor->locate();
             $visitor->save();
