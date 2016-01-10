@@ -39,7 +39,7 @@ class CfgForm extends Model
      */
     public function execute()
     {
-        $url = 'https://linode.pecky.be:80/cgi-bin/pycfg/main.py';
+        $url = Yii::getAlias('@master/pycfg/main.py');
         $data = array(
             'rules' => $this->rules,
             'cmd' => $this->action,

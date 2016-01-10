@@ -31,7 +31,7 @@ class QueenForm extends Model
     
     public function execute()
     {
-        $url = 'https://linode.pecky.be:80/cgi-bin/queens/main.py';
+        $url = Yii::getAlias('@master/queens/main.py');
         $data = array(
             'n' => $this->n,
         );

@@ -36,7 +36,7 @@ class NonsenseForm extends Model
     
     public function generate()
     {
-        $url = 'https://linode.pecky.be:80/cgi-bin/nonsense/nonsens.py';
+        $url = Yii::getAlias('@master/nonsense/nonsens.py');
         $data = array(
             'start' => $this->start,
             'seed' => $this->seed,

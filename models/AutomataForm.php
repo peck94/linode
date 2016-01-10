@@ -33,7 +33,7 @@ class AutomataForm extends Model
     
     public function generate()
     {
-        $url = 'https://linode.pecky.be:80/cgi-bin/automaton/main.py';
+        $url = Yii::getAlias('@master/automaton/main.py');
         $data = array(
             'rule' => $this->rule,
             'initial' => $this->initial,

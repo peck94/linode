@@ -2,6 +2,8 @@
 
 $params = require(__DIR__ . '/params.php');
 
+Yii::setAlias('@master', 'https://linode.pecky.be/cgi-bin');
+
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),

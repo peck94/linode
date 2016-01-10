@@ -34,7 +34,7 @@ class SubwayForm extends Model
      */
     public function execute()
     {
-        $url = 'https://linode.pecky.be:80/cgi-bin/subway/main.py';
+        $url = Yii::getAlias('@master/subway/main.py');
         $data = array(
             'size' => $this->size,
         );

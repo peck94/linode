@@ -35,7 +35,7 @@ class RandomForm extends Model
     
     public function generate()
     {
-        $url = 'https://linode.pecky.be:80/cgi-bin/random/main.py';
+        $url = Yii::getAlias('@master/random/main.py');
         $data = array(
             'seed' => $this->seed,
             'bits' => $this->bits,
