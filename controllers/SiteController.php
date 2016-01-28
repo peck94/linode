@@ -65,7 +65,7 @@ class SiteController extends Controller
 
     public function actionAbout()
     {
-        $url = 'https://linode.pecky.be:80/cgi-bin/services/whois.sh?ip=' . $_SERVER['REMOTE_ADDR'];
+        $url = Yii::getAlias('@master/cgi-bin/services/whois.sh?ip=' . $_SERVER['REMOTE_ADDR']);
         $options = array(
             'http' => array(
                 'header'  => "Content-type: text/html\r\n",
