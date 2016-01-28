@@ -22,10 +22,13 @@ $ip = htmlspecialchars($_SERVER['REMOTE_ADDR']);
             <li>Bachelor of Science in Computer Science (2015)</li>
         </ol>
         <br>
-        <strong>Main fields of interest:</strong>
+        <strong>Fields of interest:</strong>
         <ul>
             <li>Cryptography</li>
+            <li>Machine learning</li>
             <li>Formal language theory</li>
+            <li>Computability and complexity theory</li>
+            <li>Numerical analysis</li>
         </ul>
     </p>
     
