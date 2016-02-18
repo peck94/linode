@@ -40,7 +40,7 @@ AppAsset::register($this);
             ['label' => 'Projects', 'url' => ['/projects']],
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
-            ['label' => 'Blog', 'url' => ['https://linode.pecky.be/blog/public']]
+            ['label' => 'Blog', 'url' => ['https://linode.pecky.be/blog/public']],
             ['label' => 'Admin', 'url' => ['/admin/index']],
             ((Yii::$app->user->isGuest) ?
                 ['label' => 'Login', 'url' => ['/site/login']] :
