@@ -46,7 +46,7 @@ class OldSpastieForm extends Model
         $spastie = Spastie::find()->where(['key' => $key])->one();
         if($spastie) {
             $td = mcrypt_module_open($algo, '', $mode, '');
-            $iv = base64_decode($spastie->iv);
+            $iv = hex2bin($spastie->iv);
             mcrypt_generic_init($td, $password, $iv);
 
             $contents = mdecrypt_generic($td, base64_decode($spastie->msg));
