@@ -6,6 +6,7 @@ use yii\db\ActiveRecord;
 /**
  * @property string $key
  * @property string $msg
+ * @property string $iv
  */
 class Spastie extends ActiveRecord
 {

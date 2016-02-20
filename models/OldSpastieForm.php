@@ -38,7 +38,6 @@ class OldSpastieForm extends Model
     {
         $algo = 'twofish';
         $mode = 'cbc';
-        $iv = openssl_random_pseudo_bytes(16);
         $hash = 'sha256';
         
         $password = $this->password;
@@ -47,7 +46,7 @@ class OldSpastieForm extends Model
         $spastie = Spastie::find()->where(['key' => $key])->one();
         if($spastie) {
             $td = mcrypt_module_open($algo, '', $mode, '');
-            mcrypt_generic_init($td, $password, $iv);
+            mcrypt_generic_init($td, $password, $spastie->iv);
 
             $contents = mdecrypt_generic($td, base64_decode($spastie->msg));
 
