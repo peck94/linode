@@ -57,7 +57,7 @@ class NewSpastieForm extends Model
         $spastie = new Spastie;
         $spastie->key = $key;
         $spastie->msg = base64_encode($encmsg);
-        $spastie->iv = $iv;
+        $spastie->iv = base64_encode($iv);
         return $spastie->save();
     }
 
