@@ -40,7 +40,7 @@ class NewSpastieForm extends Model
     {
         $algo = 'twofish';
         $mode = 'cbc';
-        $iv = 'spastiespastiesp';
+        $iv = openssl_random_pseudo_bytes(16);
         $hash = 'sha256';
         
         $password = $this->password;
