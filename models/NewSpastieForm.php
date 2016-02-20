@@ -40,7 +40,7 @@ class NewSpastieForm extends Model
     {
         $algo = 'twofish';
         $mode = 'cbc';
-        $iv = mcrypt_create_iv(16);
+        $iv = mcrypt_create_iv(mcrypt_get_iv_size($algo, $mode));
         $hash = 'sha256';
         
         $password = $this->password;
