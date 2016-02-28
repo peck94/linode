@@ -16,6 +16,7 @@ use app\models\MasterPassForm;
 use app\models\AutomataForm;
 use app\models\MazeForm;
 use app\models\RandomForm;
+use app\models\ProverForm;
 
 class ProjectsController extends Controller
 {
