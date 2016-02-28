@@ -25,7 +25,7 @@ use yii\bootstrap\ActiveForm;
 
         <?= $form->field($model, 'kb')->textarea(['rows' => 10, 'cols' => 20]); ?>
         
-        <strong>Guidelines:</strong> The knowledge base must consist of a set of Horn clauses that are defined to be true.
+        <p><strong>Guidelines:</strong> The knowledge base must consist of a set of Horn clauses that are defined to be true.
         The prover will use these when attempting to prove the query. For example:
         <pre>
 p1
@@ -37,13 +37,15 @@ q3: q1, q2
 q4: ~q3, ~p4, p5
         </pre>
         This knowledge base defines propositions p1, p2 and p3 to be true and establishes Horn clauses p1 &and; p2 &rarr; q1,
-        q1 &and; p3 &rarr; q2, q1 &and; q2 &rarr; q3 and &not; q3 &and; &not; p4 &and; p5 &rarr; q4.
+        q1 &and; p3 &rarr; q2, q1 &and; q2 &rarr; q3 and &not; q3 &and; &not; p4 &and; p5 &rarr; q4.</p>
 
         <h2>Query</h2>
         
         <?= $form->field($model, 'q')->textInput(); ?>
         
-        The query is allowed to be any proposition or negation of a proposition, for example q3 or &not; p1.
+        <p>
+            The query is allowed to be any proposition or negation of a proposition, for example q3 or &not; p1.
+        </p>
 
         <?= Html::submitButton('Run prover', ['class' => 'btn btn-primary']) ?>
         <?php ActiveForm::end(); ?>

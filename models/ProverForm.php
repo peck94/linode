@@ -35,7 +35,7 @@ class ProverForm extends Model
     }
     
     /**
-     * Execute operation on grammar
+     * Prove the query
      */
     public function execute()
     {

@@ -212,7 +212,7 @@ class ProjectsController extends Controller
         $result = '';
         if($model->load(Yii::$app->request->post()))
         {
-            $result = $model->generate();
+            $result = $model->execute();
         }
         
         return $this->render('prover/index', [
