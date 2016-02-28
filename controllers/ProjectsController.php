@@ -204,4 +204,19 @@ class ProjectsController extends Controller
             'result' => $result,
         ]);
     }
+    
+    public function actionProver()
+    {
+        $model = new ProverForm;
+        $result = '';
+        if($model->load(Yii::$app->request->post()))
+        {
+            $result = $model->generate();
+        }
+        
+        return $this->render('prover/index', [
+            'model' => $model,
+            'result' => $result,
+        ]);
+    }
 }

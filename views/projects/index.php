@@ -93,6 +93,17 @@ use yii\helpers\Html;
                 <p><?= Html::a('Random &raquo;', ['/projects/random'], ['class' => 'btn btn-default']) ?></p>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <h2>Prover</h2>
+                <p>
+                    Propositional logic prover.
+                </p>
+                <p>
+                    <?= Html::a('Prover &raquo;', ['/projects/prover'], ['class' => 'btn btn-default']) ?>
+                </p>
+            </div>
+        </div>
 
     </div>
 </div>
