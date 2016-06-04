@@ -63,7 +63,7 @@ AppAsset::register($this);
                 could completely defeat the purpose of these applications. It might also put you at risk.
             </p>
             <p>
-                <a href="https://<?= $_SERVER[HTTP_HOST] . $_SERVER[REQUEST_URI] ?>" class="btn btn-primary">
+                <a href="https://<?= $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'] ?>" class="btn btn-primary">
                     Use secure connection
                 </a>
             </p>

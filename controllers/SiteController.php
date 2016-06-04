@@ -39,22 +39,6 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $ip = $_SERVER['REMOTE_ADDR'];
-        $ts = date('d M Y, H:i:s');
-        
-        $visitor = Visitor::find()->where(['ip' => $ip])->one();
-        if(!$visitor)
-        {
-            $visitor = new Visitor;
-            $visitor->ip = $ip;
-            $visitor->first_visit = $ts;
-            $visitor->num_visits = 0;
-        }
-        $visitor->last_visit = $ts;
-        $visitor->num_visits++;
-        $visitor->locate();
-        $visitor->save();
-        
         return $this->render('index');
     }
 
